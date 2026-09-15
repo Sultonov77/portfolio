@@ -7,10 +7,10 @@ export type Lang = "uz" | "en";
 
 export const profile = {
   name: "Samandar",
-  fullName: "Samandar Tolqinov",
+  fullName: "Samandar Sultonov",
   email: "samtall758@gmail.com",
   location: { uz: "Toshkent, O'zbekiston", en: "Tashkent, Uzbekistan" },
-  avatarInitials: "ST",
+  avatarInitials: "SS",
   resumeUrl: "", // masalan: "/resume.pdf" — faylni public/ ichiga qo'ying
   socials: [
     { label: "GitHub", href: "https://github.com/", icon: "github" },

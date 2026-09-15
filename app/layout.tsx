@@ -9,7 +9,7 @@ const description =
   "Founder & full-stack developer. Startaplar va raqamli mahsulotlar quraman — g'oyadan ishga tushirishgacha.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio.vercel.app"),
+  metadataBase: new URL("https://portfolio-plum-chi-99.vercel.app"),
   title: {
     default: `${profile.fullName} — Founder & Full-stack Developer`,
     template: `%s — ${profile.fullName}`,

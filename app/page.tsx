@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Lang } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import ProblemSolvers from "@/components/ProblemSolvers";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -21,7 +21,7 @@ export default function Home() {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (saved === "uz" || saved === "en") setLang(saved);
     } catch {
-      // localStorage yopiq bo'lsa — standart til qoladi
+      // fallback
     }
   }, []);
 
@@ -30,22 +30,27 @@ export default function Home() {
     try {
       window.localStorage.setItem(STORAGE_KEY, lang);
     } catch {
-      // e'tiborsiz qoldiramiz
+      // ignore
     }
   }, [lang]);
 
   return (
-    <>
+    <div className="relative min-h-screen bg-ink text-fg selection:bg-accent selection:text-white">
+      {/* Navigation */}
       <Nav lang={lang} setLang={setLang} />
+
+      {/* Main Content: Clean, Minimal, Impactful */}
       <main>
         <Hero lang={lang} />
-        <About lang={lang} />
+        <ProblemSolvers lang={lang} />
         <Skills lang={lang} />
         <Projects lang={lang} />
         <Experience lang={lang} />
         <Contact lang={lang} />
       </main>
+
+      {/* Footer */}
       <Footer lang={lang} />
-    </>
+    </div>
   );
 }

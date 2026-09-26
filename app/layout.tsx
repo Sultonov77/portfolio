@@ -9,7 +9,7 @@ const description =
   "Samandar Sultonov — AI ustozi va AvtoAI asoschisi. AI yordamida dasturlash va prompt engineering bo'yicha 200+ o'quvchiga dars bergan.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sultonovsamandar.uz"),
+  metadataBase: new URL("https://sultonovsamandar.vercel.app"),
   title: {
     default: `${profile.fullName} — AI Mentor & Startup Founder`,
     template: `%s — ${profile.fullName}`,

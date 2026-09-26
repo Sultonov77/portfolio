@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Lang } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ProblemSolvers from "@/components/ProblemSolvers";
+import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -42,7 +42,7 @@ export default function Home() {
       {/* Main Content: Clean, Minimal, Impactful */}
       <main>
         <Hero lang={lang} />
-        <ProblemSolvers lang={lang} />
+        <About lang={lang} />
         <Skills lang={lang} />
         <Projects lang={lang} />
         <Experience lang={lang} />

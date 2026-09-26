@@ -1,71 +1,56 @@
 "use client";
 
-import { experience, pick, type Lang } from "@/lib/content";
+import { experience, t, type Lang } from "@/lib/content";
 import Reveal from "./Reveal";
+import Section from "./Section";
 
 export default function Experience({ lang }: { lang: Lang }) {
+  const c = t[lang].experience;
+
   return (
-    <section id="experience" className="scroll-mt-24 px-6 py-24 sm:px-8 relative overflow-hidden bg-ink-2/30">
-      <div className="mx-auto max-w-5xl">
-        
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <Reveal>
-            <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-blue-400 uppercase tracking-wider">
-              {lang === "uz" ? "Kasbiy yo'l" : "Career Journey"}
-            </span>
-          </Reveal>
-
-          <Reveal delay={90}>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              {lang === "uz" ? "Ish Tajribasi" : "Work Experience"}
-            </h2>
-          </Reveal>
-
-          <Reveal delay={180}>
-            <p className="mt-3 max-w-xl text-base text-slate-400">
-              {lang === "uz"
-                ? "Startaplar, mahsulotlar va xalqaro mijozlar bilan ishlash yo'lim"
-                : "My professional background building products and delivering scalable solutions"}
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Minimal Timeline */}
-        <div className="relative border-l-2 border-line/80 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
-          {experience.map((item, idx) => (
-            <Reveal key={idx} delay={idx * 100}>
-              <div className="relative group">
-                {/* Timeline node */}
-                <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 flex h-4 w-4 items-center justify-center">
-                  <div className="h-3 w-3 rounded-full border-2 border-blue-500 bg-[#050608] group-hover:scale-125 group-hover:bg-blue-500 transition-all shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
-                </div>
-
-                {/* Card */}
-                <div className="rounded-2xl border border-line bg-ink-2/80 p-6 transition-all hover:border-blue-500/50 hover:bg-ink-2">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="inline-block rounded-lg bg-blue-500/15 px-3 py-1 text-xs font-bold text-blue-400">
-                      {item.period[lang]}
-                    </span>
-                    <span className="text-xs font-semibold text-slate-400">
-                      {pick(item.org, lang)}
-                    </span>
+    <Section id="experience" tag={c.tag} title={c.title} sub={c.sub}>
+      <ol className="relative space-y-6 border-l border-line pl-6 sm:pl-10">
+        {experience.map((item, idx) => {
+          const current = item.period.en === "Present";
+          return (
+            <Reveal as="li" key={item.org} delay={idx * 80} className="relative">
+              <span
+                className={`absolute -left-[31px] top-7 h-3 w-3 rounded-full border-2 sm:-left-[47px] ${
+                  current ? "border-blue-500 bg-blue-500" : "border-slate-500 bg-ink"
+                }`}
+              />
+              <div className="rounded-2xl border border-line bg-ink-2 p-5 transition-colors hover:border-blue-500/40 sm:p-6">
+                <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white sm:text-xl">{item.org}</h3>
+                    <div className="mt-1 text-sm font-medium text-blue-400">{item.role[lang]}</div>
                   </div>
-
-                  <h3 className="mt-3 text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                    {item.role[lang]}
-                  </h3>
-
-                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-300">
-                    {item.description[lang]}
-                  </p>
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                      current ? "bg-blue-500/15 text-blue-300" : "bg-ink-3 text-slate-400"
+                    }`}
+                  >
+                    {item.period[lang]}
+                  </span>
                 </div>
+
+                {item.description[lang] && (
+                  <p className="mt-3 text-base text-slate-300">{item.description[lang]}</p>
+                )}
+
+                <ul className="mt-3 space-y-2">
+                  {item.bullets.map((b) => (
+                    <li key={b.en} className="flex gap-3 text-base leading-relaxed text-slate-400">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                      <span>{b[lang]}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
-          ))}
-        </div>
-
-      </div>
-    </section>
+          );
+        })}
+      </ol>
+    </Section>
   );
 }

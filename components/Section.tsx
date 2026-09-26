@@ -2,22 +2,22 @@ import Reveal from "./Reveal";
 
 type Props = {
   id: string;
+  tag: string;
   title: string;
   sub?: string;
+  className?: string;
   children: React.ReactNode;
 };
 
-export default function Section({ id, title, sub, children }: Props) {
+export default function Section({ id, tag, title, sub, className = "", children }: Props) {
   return (
-    <section id={id} className="scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <section id={id} className={`relative scroll-mt-20 px-4 py-20 sm:px-6 sm:py-24 lg:py-28 ${className}`}>
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <div className="mb-12 flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-gradient-to-r from-accent to-transparent" />
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>
-            </div>
-            {sub && <p className="max-w-xl text-sm text-muted sm:text-base">{sub}</p>}
+          <div className="mb-10 max-w-2xl sm:mb-14">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-400">{tag}</span>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h2>
+            {sub && <p className="mt-3 text-base leading-relaxed text-slate-400">{sub}</p>}
           </div>
         </Reveal>
         {children}

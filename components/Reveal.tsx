@@ -17,6 +17,14 @@ export default function Reveal({ children, delay = 0, className = "", as = "div"
     const node = ref.current;
     if (!node) return;
 
+    // Content already on screen (e.g. the hero) shows immediately,
+    // and IntersectionObserver-less environments never hide content.
+    const rect = node.getBoundingClientRect();
+    if (typeof IntersectionObserver === "undefined" || rect.top < window.innerHeight) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

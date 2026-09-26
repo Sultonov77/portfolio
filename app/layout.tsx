@@ -6,12 +6,12 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin", "latin-ext"], display: "swap" });
 
 const description =
-  "Sultonov Samandar — Full-Stack Dasturchi & Mahsulot Yaratuvchisi. Veb-ilovalar, SaaS, mobil tizimlar va sun'iy intellekt integratsiyalari.";
+  "Samandar Sultonov — AI ustozi va AvtoAI asoschisi. AI yordamida dasturlash va prompt engineering bo'yicha 200+ o'quvchiga dars bergan.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sultonovsamandar.uz"),
   title: {
-    default: `${profile.fullName} — Full-Stack Developer & Product Builder`,
+    default: `${profile.fullName} — AI Mentor & Startup Founder`,
     template: `%s — ${profile.fullName}`,
   },
   description,
@@ -19,26 +19,27 @@ export const metadata: Metadata = {
     profile.fullName,
     "Samandar Sultonov",
     "Portfolio",
-    "Full-Stack Developer",
-    "Web Designer",
-    "Next.js",
-    "React",
-    "UI/UX Design",
+    "AI ustozi",
+    "AI Mentor",
+    "Prompt Engineering",
+    "AI Coding",
+    "AvtoAI",
+    "Najot Ta'lim",
     "Uzbekistan",
-    "AI Integration",
   ],
   authors: [{ name: profile.fullName }],
   creator: profile.fullName,
   openGraph: {
     type: "website",
     locale: "uz_UZ",
-    title: `${profile.fullName} — Full-Stack Developer & Product Builder`,
+    title: `${profile.fullName} — AI Mentor & Startup Founder`,
     description,
     siteName: profile.fullName,
+    images: [{ url: profile.photo, width: 1023, height: 1537, alt: profile.fullName }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.fullName} — Full-Stack Developer & Product Builder`,
+    title: `${profile.fullName} — AI Mentor & Startup Founder`,
     description,
   },
   robots: { index: true, follow: true },

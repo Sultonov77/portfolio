@@ -30,6 +30,8 @@ export default function Nav({ lang, setLang }: Props) {
     { href: "#about", label: nav.about },
     { href: "#skills", label: nav.skills },
     { href: "#projects", label: nav.projects },
+    { href: "#events", label: nav.events },
+    { href: "#certificates", label: nav.certificates },
     { href: "#experience", label: nav.experience },
     { href: "#contact", label: nav.contact },
   ];
@@ -66,16 +68,16 @@ export default function Nav({ lang, setLang }: Props) {
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-sm font-bold text-white">
             SS
           </span>
-          <span className="text-base font-semibold text-white sm:text-lg">{profile.fullName}</span>
+          <span className="whitespace-nowrap text-base font-semibold text-white sm:text-lg">{profile.fullName}</span>
         </a>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3.5 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+              className="whitespace-nowrap rounded-lg px-2.5 py-2 2xl:px-3.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
             >
               {link.label}
             </a>
@@ -97,7 +99,7 @@ export default function Nav({ lang, setLang }: Props) {
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-ink-2 text-white lg:hidden cursor-pointer"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-ink-2 text-white xl:hidden cursor-pointer"
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -106,7 +108,7 @@ export default function Nav({ lang, setLang }: Props) {
 
       {/* Mobile menu */}
       {open && (
-        <div className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-ink px-4 pb-8 pt-4 sm:px-6 lg:hidden">
+        <div className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-ink px-4 pb-8 pt-4 sm:px-6 xl:hidden">
           <div className="mx-auto flex max-w-6xl flex-col">
             {links.map((link) => (
               <a

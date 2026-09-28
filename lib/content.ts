@@ -163,6 +163,87 @@ export const projects = [
   },
 ];
 
+// Chiqishlar (video) va tadbirlar
+export const talks = [
+  {
+    title: { uz: "AI coding haqida batafsil", en: "AI coding in depth" },
+    description: {
+      uz: "AI yordamida dasturlash: vositalar, ish jarayoni va amaliy maslahatlar haqida jonli efir.",
+      en: "A live stream on AI-assisted programming: tools, workflow and practical tips.",
+    },
+    youtubeId: "CcoT6LRXrz4",
+    url: "https://www.youtube.com/live/CcoT6LRXrz4",
+  },
+];
+
+export const events = [
+  {
+    name: "Future Leaders Assembly 2026",
+    place: { uz: "Istanbul, Turkiya", en: "Istanbul, Turkey" },
+    date: { uz: "25–28 fevral, 2026", en: "February 25–28, 2026" },
+    description: {
+      uz: "“Sustainable Leadership in a Changing World” mavzusidagi xalqaro yoshlar assambleyasida ishtirok etdim va muhokamalarda qatnashdim. Ishtirok sertifikati bilan taqdirlandim.",
+      en: "Took part in the international youth assembly on “Sustainable Leadership in a Changing World” and contributed to its discussions. Awarded a certificate of participation.",
+    },
+    photo: "/events/fla-2026.webp",
+    certificate: "/events/fla-2026-certificate.webp",
+  },
+];
+
+// AI yo'nalishidagi sertifikatlar
+export const aiCertificates = [
+  {
+    title: "Google Prompting Essentials",
+    issuer: "Google · Coursera",
+    date: { uz: "28 mart, 2026", en: "March 28, 2026" },
+    description: {
+      uz: "Google tomonidan ishlab chiqilgan 4 ta kursdan iborat mutaxassislik: samarali promptlar yozish, ma'lumotlarni tahlil qilish va AI bilan murakkab vazifalarni bajarish.",
+      en: "A 4-course specialization developed by Google: designing effective prompts, analyzing data and completing complex tasks with AI.",
+    },
+    images: ["/certificates/google-prompting-essentials.webp"],
+    verify: "https://coursera.org/verify/specialization/XJ70XFV45JPT",
+  },
+  {
+    title: "Claude 101",
+    issuer: "Anthropic",
+    date: { uz: "2026", en: "2026" },
+    description: {
+      uz: "Anthropic kompaniyasining Claude AI assistenti bilan samarali ishlash bo'yicha rasmiy kursi.",
+      en: "Anthropic's official course on working effectively with the Claude AI assistant.",
+    },
+    images: ["/certificates/anthropic-claude-101.webp"],
+    verify: "",
+  },
+  {
+    title: "Five Million AI Leaders",
+    issuer: {
+      uz: "O'zbekiston Raqamli texnologiyalar vazirligi · Dubai Future Foundation",
+      en: "Ministry of Digital Technologies of Uzbekistan · Dubai Future Foundation",
+    },
+    date: { uz: "26 mart, 2026", en: "March 26, 2026" },
+    description: {
+      uz: "BAA va O'zbekiston hukumatlarining besh million kishini AI tizimlari uchun prompt engineering bo'yicha o'qitish tashabbusi.",
+      en: "A joint UAE–Uzbekistan government initiative training five million people in prompt engineering for AI systems.",
+    },
+    images: ["/certificates/five-million-ai-leaders.webp"],
+    verify: "",
+  },
+  {
+    title: "Prompt Engineering",
+    issuer: { uz: "Najot Ta'lim o'quv markazi", en: "Najot Ta'lim training center" },
+    date: { uz: "28 fevral, 2026", en: "February 28, 2026" },
+    description: {
+      uz: "Kursni a'lo baholarga tamomladim. Sertifikat bilan birga markaz rahbariyatidan tashakkurnoma oldim.",
+      en: "Completed the course with excellent grades and received a letter of appreciation from the center's leadership alongside the certificate.",
+    },
+    images: [
+      "/certificates/najot-talim-prompt-engineering.webp",
+      "/certificates/najot-talim-tashakkurnoma.webp",
+    ],
+    verify: "",
+  },
+];
+
 // TODO: har bir ish joyi uchun yillarni qo'shmoqchi bo'lsangiz period ni o'zgartiring (masalan "2024 — Hozir").
 export const experience = [
   {
@@ -218,6 +299,8 @@ export const t = {
       about: "Men haqimda",
       skills: "Ko'nikmalar",
       projects: "Loyihalar",
+      events: "Tadbirlar",
+      certificates: "Sertifikatlar",
       experience: "Tajriba",
       contact: "Aloqa",
       cta: "Bog'lanish",
@@ -245,6 +328,21 @@ export const t = {
       sub: "Men asos solgan va ishlab chiqishda qatnashgan mahsulotlar",
       visit: "Saytga o'tish",
       code: "Kodni ko'rish",
+    },
+    events: {
+      tag: "Chiqishlar va tadbirlar",
+      title: "Video va tadbirlar",
+      sub: "AI coding bo'yicha chiqishlarim va ishtirok etgan xalqaro tadbirlarim",
+      watch: "YouTube'da ko'rish",
+      certificate: "Sertifikat",
+      openCertificate: "Sertifikatni kattalashtirish",
+    },
+    certificates: {
+      tag: "Sertifikatlar",
+      title: "AI sertifikatlarim",
+      sub: "Sun'iy intellekt va prompt engineering yo'nalishida olgan sertifikatlarim",
+      verify: "Tekshirish",
+      open: "Kattalashtirish",
     },
     experience: {
       tag: "Kasbiy yo'l",
@@ -291,6 +389,8 @@ export const t = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      events: "Events",
+      certificates: "Certificates",
       experience: "Experience",
       contact: "Contact",
       cta: "Let's Talk",
@@ -318,6 +418,21 @@ export const t = {
       sub: "Products I founded or helped build",
       visit: "Visit site",
       code: "View code",
+    },
+    events: {
+      tag: "Talks & events",
+      title: "Videos & Events",
+      sub: "My talks on AI coding and the international events I've taken part in",
+      watch: "Watch on YouTube",
+      certificate: "Certificate",
+      openCertificate: "Open certificate",
+    },
+    certificates: {
+      tag: "Certificates",
+      title: "AI Certificates",
+      sub: "Certificates I've earned in artificial intelligence and prompt engineering",
+      verify: "Verify",
+      open: "View full size",
     },
     experience: {
       tag: "Career",

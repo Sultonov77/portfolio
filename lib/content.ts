@@ -16,7 +16,7 @@ export const profile = {
     en: "AI mentor and founder of AvtoAI",
   },
   headline: {
-    uz: "3 yildan beri kod yozaman, oxirgi 2 yilda asosan AI bilan ishlayapman. Najot Ta'limda AI coding'dan dars beraman va AvtoAI'ni quryapman.",
+    uz: "3 yildan beri dasturlash bilan shug'ullanaman, oxirgi 2 yilda asosan AI bilan ishlayapman. Najot Ta'limda AI coding'dan dars beraman va AvtoAI'ni quryapman.",
     en: "I've been writing code for 3 years, and for the last 2 I've mostly worked with AI. I teach AI coding at Najot Ta'lim and I'm building AvtoAI.",
   },
   sub: {
@@ -42,7 +42,7 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: "3+", label: { uz: "Yil kod", en: "Years coding" } },
+  { value: "3+", label: { uz: "Yil dasturlash", en: "Years coding" } },
   { value: "2+", label: { uz: "Yil AI", en: "Years in AI" } },
   { value: "200+", label: { uz: "O'quvchi", en: "Students" } },
   { value: "5+", label: { uz: "Loyiha", en: "Projects" } },
@@ -51,7 +51,7 @@ export const heroStats = [
 export const about = {
   tag: { uz: "Men haqimda", en: "About me" },
   title: {
-    uz: "AI bilan kod yozaman va buni boshqalarga ham o'rgataman",
+    uz: "AI bilan dasturlayman va buni boshqalarga ham o'rgataman",
     en: "I code with AI and teach others to do the same",
   },
   bio: {
@@ -85,7 +85,7 @@ export const skillsList: { name: L; desc: L; icon: string }[] = [
   {
     name: { uz: "AI coding", en: "AI coding" },
     desc: {
-      uz: "Kodni AI bilan birga yozaman: ish tezroq bitadi, sifatini esa o'zim nazorat qilaman",
+      uz: "AI bilan birga dasturlayman: ish tezroq bitadi, sifatini esa o'zim nazorat qilaman",
       en: "I write code together with AI: it gets done faster, and I stay in charge of the quality",
     },
     icon: "sparkles",
@@ -165,7 +165,7 @@ export const projects = [
 // Chiqishlar (video) va tadbirlar
 export const talks = [
   {
-    title: { uz: "AI bilan kod yozish: jonli efir", en: "Coding with AI: live stream" },
+    title: { uz: "AI bilan dasturlash: jonli efir", en: "Coding with AI: live stream" },
     description: {
       uz: "Qaysi vositalardan foydalanaman, ular bilan qanday ishlayman va endi boshlayotganlarga nima maslahat beraman. Shular haqida gaplashdik.",
       en: "Which tools I use, how I work with them, and what I'd tell someone who's just starting out.",
@@ -272,7 +272,7 @@ export const experience = [
     bullets: [
       { uz: "Hozirgacha 200 dan ortiq o'quvchiga dars berdim", en: "Taught more than 200 students so far" },
       {
-        uz: "Darslarda AI vositalari bilan haqiqiy kod yozamiz",
+        uz: "Darslarda AI vositalari bilan haqiqiy loyihalarni dasturlaymiz",
         en: "In class we write real code with AI tools",
       },
     ],

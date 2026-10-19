@@ -15,10 +15,10 @@ export default function Projects({ lang }: { lang: Lang }) {
           const domain = project.site.replace(/^https?:\/\//, "");
           return (
             <Reveal key={project.name} delay={idx * 80}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-ink-2 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/50">
+              <article className="group flex h-full flex-col overflow-hidden glass rounded-2xl border border-line transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/50">
                 {/* Preview */}
-                <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-line bg-gradient-to-br from-blue-600/20 via-ink-3 to-ink-2 sm:h-52">
-                  <div className="absolute h-40 w-40 rounded-full bg-blue-600/20 blur-3xl transition-transform duration-500 group-hover:scale-125" />
+                <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-line bg-gradient-to-br from-brand-600/25 via-ink-3 to-pink/10 sm:h-52">
+                  <div className="absolute h-40 w-40 rounded-full bg-brand-600/20 blur-3xl transition-transform duration-500 group-hover:scale-125" />
                   {project.logo ? (
                     <span className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-white/10 transition-transform duration-500 group-hover:scale-105 sm:h-32 sm:w-32">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -31,18 +31,18 @@ export default function Projects({ lang }: { lang: Lang }) {
 
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center justify-between gap-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
+                    <span className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-brand-300">
                       {project.subtitle[lang]}
                     </span>
-                    {project.year && <span className="text-sm text-slate-400">{project.year}</span>}
+                    {project.year && <span className="text-sm text-zinc-400">{project.year}</span>}
                   </div>
 
                   <h3 className="mt-2 text-xl font-semibold text-white">{project.name}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-slate-300">{project.description[lang]}</p>
+                  <p className="mt-2 text-base leading-relaxed text-zinc-300">{project.description[lang]}</p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-md bg-ink-3 px-2.5 py-1 text-xs font-medium text-slate-400">
+                      <span key={tag} className="rounded-full border border-line bg-ink-3 px-3 py-1 font-mono text-[11px] font-medium text-zinc-300">
                         {tag}
                       </span>
                     ))}
@@ -54,7 +54,7 @@ export default function Projects({ lang }: { lang: Lang }) {
                         href={project.site}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="inline-flex h-11 items-center gap-2 rounded-xl bg-blue-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-blue-500"
+                        className="inline-flex h-11 items-center gap-2 rounded-xl btn-grad px-5 text-sm font-semibold text-white transition-colors"
                       >
                         {domain}
                         <ExternalIcon />
@@ -65,7 +65,7 @@ export default function Projects({ lang }: { lang: Lang }) {
                         href={project.repo}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="inline-flex h-11 items-center gap-2 rounded-xl border border-line px-5 text-sm font-semibold text-slate-200 transition-colors hover:border-blue-500/60"
+                        className="inline-flex h-11 items-center gap-2 rounded-xl border border-line px-5 text-sm font-semibold text-zinc-200 transition-colors hover:border-brand-500/60"
                       >
                         <GithubIcon className="h-4 w-4" />
                         {c.code}

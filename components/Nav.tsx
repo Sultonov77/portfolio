@@ -45,7 +45,7 @@ export default function Nav({ lang, setLang }: Props) {
           onClick={() => setLang(code)}
           aria-pressed={lang === code}
           className={`h-8 min-w-10 rounded-md px-2.5 text-xs font-semibold uppercase transition-colors cursor-pointer ${
-            lang === code ? "bg-blue-600 text-white" : "text-slate-400 hover:text-white"
+            lang === code ? "btn-grad text-white" : "text-zinc-400 hover:text-white"
           }`}
         >
           {code}
@@ -65,7 +65,7 @@ export default function Nav({ lang, setLang }: Props) {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-18 sm:px-6">
         {/* Brand */}
         <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-sm font-bold text-white">
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl btn-grad text-sm font-bold text-white">
             SS
           </span>
           <span className="whitespace-nowrap text-base font-semibold text-white sm:text-lg">{profile.fullName}</span>
@@ -77,7 +77,7 @@ export default function Nav({ lang, setLang }: Props) {
             <a
               key={link.href}
               href={link.href}
-              className="whitespace-nowrap rounded-lg px-2.5 py-2 2xl:px-3.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+              className="whitespace-nowrap rounded-lg px-2.5 py-2 2xl:px-3.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
             >
               {link.label}
             </a>
@@ -89,7 +89,7 @@ export default function Nav({ lang, setLang }: Props) {
           <div className="hidden sm:block">{langSwitch}</div>
           <a
             href="#contact"
-            className="hidden h-10 items-center gap-2 rounded-xl bg-blue-600 px-4 text-sm font-semibold text-white transition-colors hover:bg-blue-500 md:inline-flex"
+            className="hidden h-10 items-center gap-2 rounded-xl btn-grad px-4 text-sm font-semibold text-white transition-colors md:inline-flex"
           >
             {nav.cta}
             <ArrowIcon />
@@ -115,7 +115,7 @@ export default function Nav({ lang, setLang }: Props) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-line/60 py-4 text-lg font-medium text-slate-200 hover:text-white"
+                className="border-b border-line/60 py-4 text-lg font-medium text-zinc-200 hover:text-white"
               >
                 {link.label}
               </a>
@@ -125,7 +125,7 @@ export default function Nav({ lang, setLang }: Props) {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 text-base font-semibold text-white"
+                className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-xl btn-grad px-5 text-base font-semibold text-white"
               >
                 {nav.cta}
                 <ArrowIcon />

@@ -1,9 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { profile } from "@/lib/content";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin", "latin-ext"], display: "swap" });
+const geist = Geist({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-geist" });
+const geistMono = Geist_Mono({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-geist-mono" });
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-bricolage",
+});
 
 const description =
   "Samandar Sultonov — AI ustozi va AvtoAI asoschisi. AI yordamida dasturlash va prompt engineering bo'yicha 200+ o'quvchiga dars bergan.";
@@ -46,14 +52,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07080a",
+  themeColor: "#07060b",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uz" className={inter.className}>
+    <html lang="uz" className={`${geist.variable} ${geistMono.variable} ${bricolage.variable}`}>
       <body className="glow-bg grid-bg">
         <div className="relative z-10">{children}</div>
       </body>

@@ -1,20 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #050608;
-  --color-ink-2: #090c12;
-  --color-ink-3: #0f1420;
-  --color-card: #0c101a;
-  --color-card-hover: #131826;
-  --color-line: #182032;
-  --color-line-bright: #24314c;
-  --color-fg: #f8fafc;
-  --color-muted: #94a3b8;
-  --color-accent: #3b82f6;
-  --color-accent-hover: #2563eb;
-  --color-accent-light: #60a5fa;
-  --color-accent-subtle: rgba(59, 130, 246, 0.12);
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Surfaces — near-black with a faint violet tint */
+  --color-ink: #07060b;
+  --color-ink-2: #0e0c15;
+  --color-ink-3: #16131f;
+  --color-card: #0e0c15;
+  --color-card-hover: #15121f;
+  --color-line: #221e30;
+  --color-line-bright: #352f4a;
+  --color-fg: #f6f5fb;
+  --color-muted: #a1a1aa;
+
+  /* Brand — electric violet */
+  --color-brand-50: #f4f1ff;
+  --color-brand-100: #ebe5ff;
+  --color-brand-200: #d7cbff;
+  --color-brand-300: #bba6ff;
+  --color-brand-400: #9d7bff;
+  --color-brand-500: #8257ff;
+  --color-brand-600: #6d3bf5;
+  --color-brand-700: #5a2bd6;
+
+  --color-accent: #8257ff;
+  --color-accent-hover: #6d3bf5;
+  --color-accent-light: #9d7bff;
+  --color-accent-subtle: rgba(130, 87, 255, 0.12);
+
+  /* Secondary accents used in gradients */
+  --color-pink: #ff5ca8;
+  --color-amber: #ffb547;
+  --color-mint: #3ef0c2;
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-bricolage), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 html {
@@ -33,15 +53,33 @@ body {
   color: var(--color-fg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
   overflow-x: hidden;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+h1 {
+  letter-spacing: -0.04em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-brand-500);
   color: #ffffff;
 }
 
-/* Ambient deep blue glow */
+/* Ambient aurora glow */
 .glow-bg::before {
   content: "";
   position: fixed;
@@ -49,31 +87,29 @@ body {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(65rem 40rem at 20% -10%, rgba(59, 130, 246, 0.14), transparent 70%),
-    radial-gradient(50rem 35rem at 85% 20%, rgba(37, 99, 235, 0.1), transparent 70%),
-    radial-gradient(60rem 45rem at 50% 70%, rgba(14, 165, 233, 0.06), transparent 75%);
+    radial-gradient(60rem 38rem at 15% -10%, rgba(130, 87, 255, 0.18), transparent 70%),
+    radial-gradient(45rem 32rem at 90% 10%, rgba(255, 92, 168, 0.1), transparent 70%),
+    radial-gradient(55rem 40rem at 50% 80%, rgba(62, 240, 194, 0.05), transparent 75%);
 }
 
-/* Subtle tech grid background */
+/* Subtle dot grid */
 .grid-bg::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.22;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 100% 70% at 50% 10%, #000 20%, transparent 85%);
+  opacity: 0.5;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 100% 70% at 50% 0%, #000 20%, transparent 80%);
 }
 
 /* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
@@ -91,35 +127,58 @@ body {
     transform: none;
     transition: none;
   }
+  .grad-anim {
+    animation: none;
+  }
 }
 
-/* Blue glow utilities */
-.blue-glow {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+/* Gradient fill for primary buttons and badges */
+.btn-grad {
+  background-image: linear-gradient(120deg, #6d3bf5 0%, #8257ff 45%, #ff5ca8 100%);
+  background-size: 160% 100%;
+  background-position: 0% 50%;
+  transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px -10px rgba(130, 87, 255, 0.6);
 }
 
-.blue-glow-lg {
-  box-shadow: 0 0 50px rgba(59, 130, 246, 0.45);
+.btn-grad:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 14px 40px -10px rgba(255, 92, 168, 0.55);
 }
 
-.blue-border {
-  border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+/* Glassy card surface */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(12px);
 }
 
 /* Gradient text */
 .grad-text {
-  background: linear-gradient(110deg, #ffffff 30%, #cbd5e1 70%, #93c5fd 100%);
+  background: linear-gradient(110deg, #ffffff 30%, #d7cbff 70%, #ffb3d6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.grad-text-blue {
-  background: linear-gradient(110deg, #60a5fa 10%, #3b82f6 50%, #93c5fd 90%);
+.grad-text-brand {
+  background: linear-gradient(100deg, #9d7bff 0%, #ff5ca8 50%, #ffb547 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.grad-anim {
+  animation: grad-shift 8s ease-in-out infinite alternate;
+}
+
+@keyframes grad-shift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
 }
 
 /* Custom modern scrollbar */

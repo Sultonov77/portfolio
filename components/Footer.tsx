@@ -11,7 +11,7 @@ export default function Footer({ lang }: { lang: Lang }) {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
         <div>
           <div className="text-base font-semibold text-white">{profile.fullName}</div>
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm text-zinc-400">
             © {new Date().getFullYear()} · {c.rights}
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function Footer({ lang }: { lang: Lang }) {
                 target={social.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noreferrer noopener"
                 aria-label={social.label}
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-line text-slate-400 transition-colors hover:border-blue-500/60 hover:text-blue-400"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-line text-zinc-400 transition-colors hover:border-brand-500/60 hover:text-brand-400"
               >
                 {Icon && <Icon className="h-5 w-5" />}
               </a>
@@ -37,7 +37,7 @@ export default function Footer({ lang }: { lang: Lang }) {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label={c.backToTop}
             title={c.backToTop}
-            className="ml-2 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition-colors hover:bg-blue-500 cursor-pointer"
+            className="ml-2 flex h-11 w-11 items-center justify-center rounded-xl btn-grad text-white transition-colors cursor-pointer"
           >
             <ArrowUpIcon />
           </button>

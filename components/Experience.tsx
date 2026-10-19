@@ -16,18 +16,18 @@ export default function Experience({ lang }: { lang: Lang }) {
             <Reveal as="li" key={item.org} delay={idx * 80} className="relative">
               <span
                 className={`absolute -left-[31px] top-7 h-3 w-3 rounded-full border-2 sm:-left-[47px] ${
-                  current ? "border-blue-500 bg-blue-500" : "border-slate-500 bg-ink"
+                  current ? "border-pink bg-gradient-to-br from-brand-500 to-pink shadow-[0_0_14px_rgba(255,92,168,0.6)]" : "border-zinc-500 bg-ink"
                 }`}
               />
-              <div className="rounded-2xl border border-line bg-ink-2 p-5 transition-colors hover:border-blue-500/40 sm:p-6">
+              <div className="glass rounded-2xl border border-line p-5 transition-colors hover:border-brand-500/40 sm:p-6">
                 <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
                   <div>
                     <h3 className="text-lg font-semibold text-white sm:text-xl">{item.org}</h3>
-                    <div className="mt-1 text-sm font-medium text-blue-400">{item.role[lang]}</div>
+                    <div className="mt-1 text-sm font-medium text-brand-400">{item.role[lang]}</div>
                   </div>
                   <span
                     className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                      current ? "bg-blue-500/15 text-blue-300" : "bg-ink-3 text-slate-400"
+                      current ? "bg-brand-500/15 text-brand-300" : "bg-ink-3 text-zinc-400"
                     }`}
                   >
                     {item.period[lang]}
@@ -35,13 +35,13 @@ export default function Experience({ lang }: { lang: Lang }) {
                 </div>
 
                 {item.description[lang] && (
-                  <p className="mt-3 text-base text-slate-300">{item.description[lang]}</p>
+                  <p className="mt-3 text-base text-zinc-300">{item.description[lang]}</p>
                 )}
 
                 <ul className="mt-3 space-y-2">
                   {item.bullets.map((b) => (
-                    <li key={b.en} className="flex gap-3 text-base leading-relaxed text-slate-400">
-                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                    <li key={b.en} className="flex gap-3 text-base leading-relaxed text-zinc-400">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
                       <span>{b[lang]}</span>
                     </li>
                   ))}

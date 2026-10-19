@@ -27,7 +27,7 @@ function Blob() {
     <Float speed={1.4} rotationIntensity={0.6} floatIntensity={1.2}>
       <mesh ref={mesh} position={[2.7, 1, -1.5]} scale={1.2}>
         <icosahedronGeometry args={[1, 32]} />
-        <MeshDistortMaterial color="#8257ff" emissive="#3b1a9c" roughness={0.15} metalness={0.4} distort={0.38} speed={1.6} />
+        <MeshDistortMaterial color="#0891b2" emissive="#083344" roughness={0.15} metalness={0.4} distort={0.38} speed={1.6} />
       </mesh>
     </Float>
   );
@@ -44,7 +44,7 @@ function Ring() {
     <Float speed={2} rotationIntensity={1} floatIntensity={1.5}>
       <mesh ref={mesh} position={[0.45, 2, -1]} scale={0.4}>
         <torusGeometry args={[1, 0.32, 48, 120]} />
-        <meshStandardMaterial color="#ff5ca8" roughness={0.25} metalness={0.6} />
+        <meshStandardMaterial color="#10b981" roughness={0.25} metalness={0.6} />
       </mesh>
     </Float>
   );
@@ -61,7 +61,7 @@ function GlassCube() {
     <Float speed={1.8} rotationIntensity={1.2} floatIntensity={1}>
       <RoundedBox ref={mesh} args={[1, 1, 1]} radius={0.18} smoothness={6} position={[2.9, -1.3, 0]} scale={0.55}>
         <MeshTransmissionMaterial
-          color="#d7cbff"
+          color="#a5f3fc"
           thickness={0.6}
           roughness={0.05}
           transmission={1}
@@ -99,16 +99,16 @@ export default function Scene3D() {
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[4, 5, 5]} intensity={2.2} color="#ffffff" />
-      <pointLight position={[-5, -2, 3]} intensity={30} color="#ff5ca8" />
-      <pointLight position={[5, 2, 2]} intensity={25} color="#8257ff" />
-      <pointLight position={[0, -4, 2]} intensity={12} color="#ffb547" />
+      <pointLight position={[-5, -2, 3]} intensity={30} color="#10b981" />
+      <pointLight position={[5, 2, 2]} intensity={25} color="#06b6d4" />
+      <pointLight position={[0, -4, 2]} intensity={12} color="#f59e0b" />
       <Rig>
         <Blob />
         <Ring />
         <GlassCube />
-        <Orb position={[-3.3, 2.55, -1.5]} color="#ffb547" scale={0.2} />
-        <Orb position={[0.25, -1.75, -1]} color="#3ef0c2" scale={0.12} />
-        <Orb position={[-0.6, 2.45, -2]} color="#9d7bff" scale={0.2} />
+        <Orb position={[-3.3, 2.55, -1.5]} color="#f59e0b" scale={0.2} />
+        <Orb position={[0.25, -1.75, -1]} color="#34d399" scale={0.12} />
+        <Orb position={[-0.6, 2.45, -2]} color="#67e8f9" scale={0.2} />
       </Rig>
     </Canvas>
   );

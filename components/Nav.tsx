@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { profile, t, type Lang } from "@/lib/content";
 import { ArrowIcon, CloseIcon, MenuIcon } from "./Icons";
+import Logo from "./Logo";
 
 type Props = { lang: Lang; setLang: (l: Lang) => void };
 
@@ -65,9 +66,7 @@ export default function Nav({ lang, setLang }: Props) {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-18 sm:px-6">
         {/* Brand */}
         <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl btn-grad text-sm font-bold text-white">
-            SS
-          </span>
+          <Logo className="h-10 w-10 shrink-0 drop-shadow-[0_6px_18px_rgba(6,182,212,0.45)]" />
           <span className="whitespace-nowrap text-base font-semibold text-white sm:text-lg">{profile.fullName}</span>
         </a>
 

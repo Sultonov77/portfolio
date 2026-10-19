@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  /* Surfaces — near-black with a faint violet tint */
-  --color-ink: #07060b;
-  --color-ink-2: #0e0c15;
-  --color-ink-3: #16131f;
-  --color-card: #0e0c15;
-  --color-card-hover: #15121f;
-  --color-line: #221e30;
-  --color-line-bright: #352f4a;
+  /* Surfaces — cool graphite */
+  --color-ink: #06080b;
+  --color-ink-2: #0b0f14;
+  --color-ink-3: #11171e;
+  --color-card: #0b0f14;
+  --color-card-hover: #121920;
+  --color-line: #1b232d;
+  --color-line-bright: #2a3644;
   --color-fg: #f6f5fb;
   --color-muted: #a1a1aa;
 
-  /* Brand — electric violet */
-  --color-brand-50: #f4f1ff;
-  --color-brand-100: #ebe5ff;
-  --color-brand-200: #d7cbff;
-  --color-brand-300: #bba6ff;
-  --color-brand-400: #9d7bff;
-  --color-brand-500: #8257ff;
-  --color-brand-600: #6d3bf5;
-  --color-brand-700: #5a2bd6;
+  /* Brand — electric cyan */
+  --color-brand-50: #ecfeff;
+  --color-brand-100: #cffafe;
+  --color-brand-200: #a5f3fc;
+  --color-brand-300: #67e8f9;
+  --color-brand-400: #22d3ee;
+  --color-brand-500: #06b6d4;
+  --color-brand-600: #0891b2;
+  --color-brand-700: #0e7490;
 
-  --color-accent: #8257ff;
-  --color-accent-hover: #6d3bf5;
-  --color-accent-light: #9d7bff;
-  --color-accent-subtle: rgba(130, 87, 255, 0.12);
+  --color-accent: #06b6d4;
+  --color-accent-hover: #0891b2;
+  --color-accent-light: #22d3ee;
+  --color-accent-subtle: rgba(6, 182, 212, 0.12);
 
   /* Secondary accents used in gradients */
-  --color-pink: #ff5ca8;
-  --color-amber: #ffb547;
-  --color-mint: #3ef0c2;
+  --color-glow: #10b981;
+  --color-amber: #f59e0b;
+  --color-mint: #34d399;
 
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: var(--font-bricolage), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
@@ -79,7 +79,7 @@ p {
   color: #ffffff;
 }
 
-/* Ambient aurora glow */
+/* Ambient cyan/emerald glow */
 .glow-bg::before {
   content: "";
   position: fixed;
@@ -87,9 +87,9 @@ p {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(60rem 38rem at 15% -10%, rgba(130, 87, 255, 0.18), transparent 70%),
-    radial-gradient(45rem 32rem at 90% 10%, rgba(255, 92, 168, 0.1), transparent 70%),
-    radial-gradient(55rem 40rem at 50% 80%, rgba(62, 240, 194, 0.05), transparent 75%);
+    radial-gradient(60rem 38rem at 15% -10%, rgba(6, 182, 212, 0.18), transparent 70%),
+    radial-gradient(45rem 32rem at 90% 10%, rgba(16, 185, 129, 0.1), transparent 70%),
+    radial-gradient(55rem 40rem at 50% 80%, rgba(245, 158, 11, 0.04), transparent 75%);
 }
 
 /* Subtle dot grid */
@@ -159,7 +159,7 @@ p {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
-  background: radial-gradient(28rem circle at var(--gx, 50%) var(--gy, 50%), rgba(157, 123, 255, 0.16), transparent 45%);
+  background: radial-gradient(28rem circle at var(--gx, 50%) var(--gy, 50%), rgba(34, 211, 238, 0.16), transparent 45%);
 }
 
 .tilt[data-active]::after {
@@ -168,16 +168,16 @@ p {
 
 /* Gradient fill for primary buttons and badges */
 .btn-grad {
-  background-image: linear-gradient(120deg, #6d3bf5 0%, #8257ff 45%, #ff5ca8 100%);
+  background-image: linear-gradient(120deg, #0e7490 0%, #0891b2 45%, #059669 100%);
   background-size: 160% 100%;
   background-position: 0% 50%;
   transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 30px -10px rgba(130, 87, 255, 0.6);
+  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.6);
 }
 
 .btn-grad:hover {
   background-position: 100% 50%;
-  box-shadow: 0 14px 40px -10px rgba(255, 92, 168, 0.55);
+  box-shadow: 0 14px 40px -10px rgba(16, 185, 129, 0.55);
 }
 
 /* Glassy card surface */
@@ -188,14 +188,14 @@ p {
 
 /* Gradient text */
 .grad-text {
-  background: linear-gradient(110deg, #ffffff 30%, #d7cbff 70%, #ffb3d6 100%);
+  background: linear-gradient(110deg, #ffffff 30%, #a5f3fc 70%, #a7f3d0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .grad-text-brand {
-  background: linear-gradient(100deg, #9d7bff 0%, #ff5ca8 50%, #ffb547 100%);
+  background: linear-gradient(100deg, #22d3ee 0%, #2dd4bf 50%, #34d399 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;

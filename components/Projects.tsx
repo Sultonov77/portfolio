@@ -19,7 +19,7 @@ export default function Projects({ lang }: { lang: Lang }) {
               <Tilt className="h-full">
                 <article className="group flex h-full flex-col overflow-hidden glass rounded-2xl border border-line transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/50">
                   {/* Preview */}
-                  <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-line bg-gradient-to-br from-brand-600/25 via-ink-3 to-pink/10 sm:h-52">
+                  <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-line bg-gradient-to-br from-brand-600/25 via-ink-3 to-glow/10 sm:h-52">
                     <div className="absolute h-40 w-40 rounded-full bg-brand-600/20 blur-3xl transition-transform duration-500 group-hover:scale-125" />
                     {project.logo ? (
                       <span className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-white/10 transition-transform duration-500 group-hover:scale-105 sm:h-32 sm:w-32">

@@ -16,7 +16,7 @@ export default function Section({ id, tag, title, sub, className = "", children 
         <Reveal>
           <div className="mb-10 max-w-2xl sm:mb-14">
             <span className="inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-300">
-              <span className="h-px w-6 bg-gradient-to-r from-brand-400 to-pink" />
+              <span className="h-px w-6 bg-gradient-to-r from-brand-400 to-glow" />
               {tag}
             </span>
             <h2 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">{title}</h2>

@@ -16,7 +16,7 @@ export default function Experience({ lang }: { lang: Lang }) {
             <Reveal as="li" key={item.org} delay={idx * 80} className="relative">
               <span
                 className={`absolute -left-[31px] top-7 h-3 w-3 rounded-full border-2 sm:-left-[47px] ${
-                  current ? "border-pink bg-gradient-to-br from-brand-500 to-pink shadow-[0_0_14px_rgba(255,92,168,0.6)]" : "border-zinc-500 bg-ink"
+                  current ? "border-glow bg-gradient-to-br from-brand-500 to-glow shadow-[0_0_14px_rgba(16,185,129,0.6)]" : "border-zinc-500 bg-ink"
                 }`}
               />
               <div className="glass rounded-2xl border border-line p-5 transition-colors hover:border-brand-500/40 sm:p-6">

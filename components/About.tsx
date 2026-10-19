@@ -55,7 +55,7 @@ export default function About({ lang }: { lang: Lang }) {
                       {[1, 2, 3, 4, 5].map((i) => (
                         <span
                           key={i}
-                          className={`h-2 w-5 rounded-full ${i <= l.dots ? "bg-gradient-to-r from-brand-500 to-pink" : "bg-zinc-800"}`}
+                          className={`h-2 w-5 rounded-full ${i <= l.dots ? "bg-gradient-to-r from-brand-500 to-glow" : "bg-zinc-800"}`}
                         />
                       ))}
                     </span>

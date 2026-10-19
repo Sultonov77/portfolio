@@ -37,6 +37,7 @@ export const profile = {
     { label: "GitHub", href: "https://github.com/Sultonov77", icon: "github" },
     { label: "Telegram", href: "https://t.me/sultonov28", icon: "telegram" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/samandar-sultonov-a81324416/", icon: "linkedin" },
+    { label: "Instagram", href: "https://www.instagram.com/sultonov.ai/", icon: "instagram" },
     { label: "Email", href: "mailto:samtall758@gmail.com", icon: "mail" },
   ].filter((s) => s.href),
 };
@@ -64,11 +65,10 @@ export const about = {
     { name: { uz: "Rus", en: "Russian" }, level: { uz: "B1", en: "B1" }, dots: 3 },
     { name: { uz: "Turk", en: "Turkish" }, level: { uz: "B1", en: "B1" }, dots: 3 },
   ],
-  // TODO: CEFR darajasini qo'shing (bo'sh qolsa faqat nomi chiqadi).
   certificates: [
     { name: "IELTS", score: "6.0" },
     { name: "SAT", score: "1210" },
-    { name: "CEFR", score: "" },
+    { name: "CEFR", score: "B2" },
   ],
   education: [
     {

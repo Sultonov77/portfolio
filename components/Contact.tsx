@@ -12,7 +12,8 @@ const inputClass =
 export default function Contact({ lang }: { lang: Lang }) {
   const c = t[lang].contact;
   const [copied, setCopied] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", topic: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", topic: "", message: "", website: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   async function copyEmail() {
     try {
@@ -24,11 +25,21 @@ export default function Contact({ lang }: { lang: Lang }) {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = formData.topic || c.title;
-    const body = `${formData.message}\n\n— ${formData.name} (${formData.email})`;
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setStatus("sent");
+      setFormData({ name: "", email: "", topic: "", message: "", website: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   const channels = [
@@ -112,6 +123,17 @@ export default function Contact({ lang }: { lang: Lang }) {
         {/* Form */}
         <Reveal delay={120} className="lg:col-span-3">
           <form onSubmit={handleSubmit} className="space-y-5 glass rounded-2xl border border-line p-5 sm:p-8">
+            {/* Honeypot for bots: hidden from people and screen readers */}
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={formData.website}
+              onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+              className="hidden"
+            />
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block text-sm font-medium text-zinc-300">{c.form.name} *</span>
@@ -169,12 +191,20 @@ export default function Contact({ lang }: { lang: Lang }) {
 
             <button
               type="submit"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl btn-grad px-6 text-base font-semibold text-white transition-colors cursor-pointer"
+              disabled={status === "sending"}
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl btn-grad px-6 text-base font-semibold text-white transition-colors cursor-pointer disabled:cursor-wait disabled:opacity-70"
             >
-              {c.form.send}
+              {status === "sending" ? c.form.sending : c.form.send}
               <ArrowIcon />
             </button>
-            <p className="text-center text-sm text-zinc-500">{c.form.note}</p>
+            <p
+              role="status"
+              className={`text-center text-sm ${
+                status === "sent" ? "text-mint" : status === "error" ? "text-amber" : "text-zinc-500"
+              }`}
+            >
+              {status === "sent" ? c.form.sent : status === "error" ? c.form.error : c.form.note}
+            </p>
           </form>
         </Reveal>
       </div>

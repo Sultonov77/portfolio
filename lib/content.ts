@@ -36,8 +36,7 @@ export const profile = {
   socials: [
     { label: "GitHub", href: "https://github.com/Sultonov77", icon: "github" },
     { label: "Telegram", href: "https://t.me/sultonov28", icon: "telegram" },
-    // TODO: LinkedIn profilingiz havolasini qo'ying (bo'sh qolsa ko'rsatilmaydi).
-    { label: "LinkedIn", href: "", icon: "linkedin" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/samandar-sultonov-a81324416/", icon: "linkedin" },
     { label: "Email", href: "mailto:samtall758@gmail.com", icon: "mail" },
   ].filter((s) => s.href),
 };
@@ -65,18 +64,18 @@ export const about = {
     { name: { uz: "Rus", en: "Russian" }, level: { uz: "B1", en: "B1" }, dots: 3 },
     { name: { uz: "Turk", en: "Turkish" }, level: { uz: "B1", en: "B1" }, dots: 3 },
   ],
-  // TODO: ballarni qo'shing, masalan score: "7.0" (bo'sh qolsa faqat nomi chiqadi).
+  // TODO: CEFR darajasini qo'shing (bo'sh qolsa faqat nomi chiqadi).
   certificates: [
-    { name: "IELTS", score: "" },
-    { name: "SAT", score: "" },
+    { name: "IELTS", score: "6.0" },
+    { name: "SAT", score: "1210" },
     { name: "CEFR", score: "" },
   ],
   education: [
     {
-      school: { uz: "Turin politexnika universiteti", en: "Turin Polytechnic University" },
-      detail: { uz: "Toshkent shahridagi filiali", en: "Tashkent branch" },
-      // TODO: fakultet / yo'nalish va o'qish yillari, masalan "Dasturiy injiniring" va "2022 — 2026".
-      field: { uz: "", en: "" },
+      school: { uz: "Turin politexnika universiteti (TTPU)", en: "Turin Polytechnic University (TTPU)" },
+      detail: { uz: "Toshkent", en: "Tashkent" },
+      field: { uz: "Software Engineering", en: "Software Engineering" },
+      // TODO: o'qish yillarini qo'shing, masalan "2024 — 2028".
       period: "",
     },
   ],

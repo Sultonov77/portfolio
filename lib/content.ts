@@ -355,7 +355,7 @@ export const t = {
       form: {
         name: "Ismingiz",
         namePlaceholder: "Ali Valiyev",
-        email: "Email manzilingiz",
+        phone: "Telefon raqamingiz",
         topic: "Mavzu",
         topicPlaceholder: "Mavzuni tanlang",
         topics: [
@@ -450,7 +450,7 @@ export const t = {
       form: {
         name: "Your name",
         namePlaceholder: "John Doe",
-        email: "Your email",
+        phone: "Your phone number",
         topic: "Topic",
         topicPlaceholder: "Choose a topic",
         topics: [

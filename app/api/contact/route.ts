@@ -2,7 +2,7 @@
 // TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are server-only env vars
 // (.env.local locally, Project Settings → Environment Variables on Vercel).
 
-const LIMITS = { name: 100, email: 200, topic: 100, message: 4000 };
+const LIMITS = { name: 100, phone: 30, topic: 100, message: 4000 };
 
 // Best-effort per-IP throttle; resets when the serverless instance restarts.
 const WINDOW_MS = 10 * 60 * 1000;
@@ -43,10 +43,11 @@ export async function POST(request: Request) {
   }
 
   const name = field(body, "name");
-  const email = field(body, "email");
+  const phone = field(body, "phone");
   const topic = field(body, "topic");
   const message = field(body, "message");
-  if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  const digits = phone.replace(/\D/g, "");
+  if (!name || !message || !/^[+0-9 ()-]+$/.test(phone) || digits.length < 7 || digits.length > 15) {
     return Response.json({ ok: false, error: "invalid" }, { status: 400 });
   }
 
@@ -55,7 +56,7 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, error: "rate_limited" }, { status: 429 });
   }
 
-  const details = [`👤 ${name}`, `✉️ ${email}`, ...(topic ? [`🏷 ${topic}`] : [])];
+  const details = [`👤 ${name}`, `📞 ${phone}`, ...(topic ? [`🏷 ${topic}`] : [])];
   const text = ["📩 Saytdan yangi xabar", details.join("\n"), message].join("\n\n");
 
   const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {

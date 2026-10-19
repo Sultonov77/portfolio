@@ -12,7 +12,7 @@ const inputClass =
 export default function Contact({ lang }: { lang: Lang }) {
   const c = t[lang].contact;
   const [copied, setCopied] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", topic: "", message: "", website: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", topic: "", message: "", website: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   async function copyEmail() {
@@ -36,7 +36,7 @@ export default function Contact({ lang }: { lang: Lang }) {
       });
       if (!res.ok) throw new Error(String(res.status));
       setStatus("sent");
-      setFormData({ name: "", email: "", topic: "", message: "", website: "" });
+      setFormData({ name: "", phone: "", topic: "", message: "", website: "" });
     } catch {
       setStatus("error");
     }
@@ -148,14 +148,15 @@ export default function Contact({ lang }: { lang: Lang }) {
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-zinc-300">{c.form.email} *</span>
+                <span className="mb-2 block text-sm font-medium text-zinc-300">{c.form.phone} *</span>
                 <input
-                  type="email"
+                  type="tel"
+                  inputMode="tel"
                   required
-                  autoComplete="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="example@mail.com"
+                  autoComplete="tel"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="+998 90 123 45 67"
                   className={inputClass}
                 />
               </label>

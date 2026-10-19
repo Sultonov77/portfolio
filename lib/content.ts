@@ -12,16 +12,16 @@ export const profile = {
   surname: "Sultonov",
   fullName: "Samandar Sultonov",
   role: {
-    uz: "AI Ustozi · Startap Asoschisi",
-    en: "AI Mentor · Startup Founder",
+    uz: "AI ustozi va AvtoAI asoschisi",
+    en: "AI mentor and founder of AvtoAI",
   },
   headline: {
-    uz: "Dasturlash sohasida 3 yillik, sun'iy intellekt yo'nalishida 2 yillik tajribaga ega mutaxassis.",
-    en: "Developer with 3 years of coding and 2 years of hands-on AI experience.",
+    uz: "3 yildan beri kod yozaman, oxirgi 2 yilda asosan AI bilan ishlayapman. Najot Ta'limda AI coding'dan dars beraman va AvtoAI'ni quryapman.",
+    en: "I've been writing code for 3 years, and for the last 2 I've mostly worked with AI. I teach AI coding at Najot Ta'lim and I'm building AvtoAI.",
   },
   sub: {
-    uz: "200 dan ortiq o'quvchiga AI yordamida dasturlash va prompt engineering bo'yicha dars berganman, 5 dan ortiq loyihani amalga oshirganman. AI texnologiyalari va yangiliklariga doimo ochiqman.",
-    en: "I have taught AI-assisted programming and prompt engineering to 200+ students and shipped 5+ projects. Always open to new AI technologies and ideas.",
+    uz: "Hozirgacha 200 dan ortiq o'quvchiga AI bilan dasturlash va prompt yozishni o'rgatganman. 5 dan ortiq loyiha qilganman, ulardan biri haydovchilik imtihoniga tayyorlov platformasi AvtoAI. Yangi AI vositasi chiqsa, odatda birinchilardan bo'lib sinab ko'raman.",
+    en: "So far I've taught more than 200 students how to code with AI and write good prompts. I've built 5+ projects, one of them AvtoAI, a platform for driver's licence exam prep. When a new AI tool comes out, I'm usually among the first to try it.",
   },
   email: "samtall758@gmail.com",
   phone: "+998 94 522 50 70",
@@ -52,12 +52,12 @@ export const heroStats = [
 export const about = {
   tag: { uz: "Men haqimda", en: "About me" },
   title: {
-    uz: "AI bilan dasturlashni o'rgataman va mahsulot quraman",
-    en: "I teach AI-assisted coding and build products",
+    uz: "AI bilan kod yozaman va buni boshqalarga ham o'rgataman",
+    en: "I code with AI and teach others to do the same",
   },
   bio: {
-    uz: `${profile.headline.uz} ${profile.sub.uz}`,
-    en: `${profile.headline.en} ${profile.sub.en}`,
+    uz: profile.sub.uz,
+    en: profile.sub.en,
   },
   languages: [
     { name: { uz: "O'zbek", en: "Uzbek" }, level: { uz: "Ona tili", en: "Native" }, dots: 5 },
@@ -86,48 +86,48 @@ export const skillsList: { name: L; desc: L; icon: string }[] = [
   {
     name: { uz: "AI coding", en: "AI coding" },
     desc: {
-      uz: "AI vositalari yordamida tez va sifatli dasturlash",
-      en: "Building software fast with AI coding tools",
+      uz: "Kodni AI bilan birga yozaman: ish tezroq bitadi, sifatini esa o'zim nazorat qilaman",
+      en: "I write code together with AI: it gets done faster, and I stay in charge of the quality",
     },
     icon: "sparkles",
   },
   {
     name: { uz: "Prompt engineering", en: "Prompt engineering" },
     desc: {
-      uz: "LLM lardan aniq va barqaror natija olish",
-      en: "Getting precise, reliable results from LLMs",
+      uz: "Modeldan kerakli javobni chiqaradigan promptlar yozaman",
+      en: "Writing prompts that actually get the model to the answer you need",
     },
     icon: "prompt",
   },
   {
     name: { uz: "Dasturlash", en: "Programming" },
     desc: {
-      uz: "Veb-platformalarni ishlab chiqish va qo'llab-quvvatlash",
-      en: "Developing and maintaining web platforms",
+      uz: "Veb-sayt va platformalar yarataman, keyin ularning ishlab turishiga qarayman",
+      en: "I build websites and platforms, then keep them running",
     },
     icon: "code",
   },
   {
     name: { uz: "AI orqali avtomatlashtirish", en: "AI automation" },
     desc: {
-      uz: "Takroriy ishlarni AI agentlar va botlar yordamida avtomatlashtirish",
-      en: "Automating repetitive work with AI agents and bots",
+      uz: "Bir xil ishni qayta-qayta qilmaslik uchun bot va AI agentlar yasayman",
+      en: "Bots and AI agents that take repetitive work off your plate",
     },
     icon: "automation",
   },
   {
     name: { uz: "O'qitish va mentorlik", en: "Teaching & mentoring" },
     desc: {
-      uz: "200+ o'quvchiga amaliy darslar",
-      en: "Hands-on lessons for 200+ students",
+      uz: "Hozirgacha 200 dan ortiq o'quvchi bilan amaliy dars o'tganman",
+      en: "Practical classes with 200+ students so far",
     },
     icon: "graduation",
   },
   {
     name: { uz: "Startap boshqaruvi", en: "Startup management" },
     desc: {
-      uz: "G'oyadan ishlaydigan mahsulotgacha",
-      en: "From idea to a working product",
+      uz: "AvtoAI'ni g'oyadan ishlaydigan saytgacha olib keldim",
+      en: "Took AvtoAI from an idea to a live product",
     },
     icon: "rocket",
   },
@@ -142,8 +142,8 @@ export const projects = [
     year: "",
     tags: ["AI", "EdTech", "Web"],
     description: {
-      uz: "Haydovchilik guvohnomasi imtihoniga AI yordamida tayyorlov platformasi.",
-      en: "AI-powered preparation platform for the driver's license exam.",
+      uz: "Haydovchilik guvohnomasi imtihoniga tayyorlanish uchun platforma. Yo'l harakati qoidalarini AI yordamida o'rganasiz va imtihon savollarini yechib mashq qilasiz.",
+      en: "A platform for getting ready for the driver's licence exam. You learn the traffic rules with help from AI and practise on real exam-style questions.",
     },
     site: "https://avtoai.uz",
     repo: "",
@@ -155,8 +155,8 @@ export const projects = [
     year: "",
     tags: ["Web", "EdTech"],
     description: {
-      uz: "Onlayn test platformasi — ishlab chiqish va qo'llab-quvvatlashda ishtirok etganman.",
-      en: "Online testing platform — I took part in its development and maintenance.",
+      uz: "Onlayn test platformasi. Jamoada dasturchi bo'lib ishlaganman: yangi imkoniyatlar qo'shganman va saytning ishlab turishiga qaraganman.",
+      en: "An online testing platform. I worked on it as a developer, adding features and keeping the site running.",
     },
     site: "https://testbor.uz",
     repo: "",
@@ -166,10 +166,10 @@ export const projects = [
 // Chiqishlar (video) va tadbirlar
 export const talks = [
   {
-    title: { uz: "AI coding haqida batafsil", en: "AI coding in depth" },
+    title: { uz: "AI bilan kod yozish: jonli efir", en: "Coding with AI: live stream" },
     description: {
-      uz: "AI yordamida dasturlash: vositalar, ish jarayoni va amaliy maslahatlar haqida jonli efir.",
-      en: "A live stream on AI-assisted programming: tools, workflow and practical tips.",
+      uz: "Qaysi vositalardan foydalanaman, ular bilan qanday ishlayman va endi boshlayotganlarga nima maslahat beraman. Shular haqida gaplashdik.",
+      en: "Which tools I use, how I work with them, and what I'd tell someone who's just starting out.",
     },
     youtubeId: "CcoT6LRXrz4",
     url: "https://www.youtube.com/live/CcoT6LRXrz4",
@@ -182,8 +182,8 @@ export const events = [
     place: { uz: "Istanbul, Turkiya", en: "Istanbul, Turkey" },
     date: { uz: "25–28 fevral, 2026", en: "February 25–28, 2026" },
     description: {
-      uz: "“Sustainable Leadership in a Changing World” mavzusidagi xalqaro yoshlar assambleyasida ishtirok etdim va muhokamalarda qatnashdim. Ishtirok sertifikati bilan taqdirlandim.",
-      en: "Took part in the international youth assembly on “Sustainable Leadership in a Changing World” and contributed to its discussions. Awarded a certificate of participation.",
+      uz: "Istanbulda o'tgan xalqaro yoshlar assambleyasi, mavzusi “Sustainable Leadership in a Changing World” edi. Muhokamalarda qatnashdim va ishtirok sertifikatini oldim.",
+      en: "An international youth assembly in Istanbul on “Sustainable Leadership in a Changing World”. I joined the discussions and received a certificate of participation.",
     },
     photo: "/events/fla-2026.webp",
     certificate: "/events/fla-2026-certificate.webp",
@@ -197,8 +197,8 @@ export const aiCertificates = [
     issuer: "Google · Coursera",
     date: { uz: "28 mart, 2026", en: "March 28, 2026" },
     description: {
-      uz: "Google tomonidan ishlab chiqilgan 4 ta kursdan iborat mutaxassislik: samarali promptlar yozish, ma'lumotlarni tahlil qilish va AI bilan murakkab vazifalarni bajarish.",
-      en: "A 4-course specialization developed by Google: designing effective prompts, analyzing data and completing complex tasks with AI.",
+      uz: "Google tayyorlagan 4 ta kursdan iborat dastur. Unda prompt yozish, ma'lumotni tahlil qilish va murakkab vazifalarni AI bilan bajarish o'rgatiladi.",
+      en: "Four courses from Google on writing prompts, analysing data and handling bigger tasks with AI.",
     },
     images: ["/certificates/google-prompting-essentials.webp"],
     verify: "https://coursera.org/verify/specialization/XJ70XFV45JPT",
@@ -208,8 +208,8 @@ export const aiCertificates = [
     issuer: "Anthropic",
     date: { uz: "2026", en: "2026" },
     description: {
-      uz: "Anthropic kompaniyasining Claude AI assistenti bilan samarali ishlash bo'yicha rasmiy kursi.",
-      en: "Anthropic's official course on working effectively with the Claude AI assistant.",
+      uz: "Anthropic'ning Claude bilan ishlash bo'yicha rasmiy kursi.",
+      en: "Anthropic's official course on working with Claude.",
     },
     images: ["/certificates/anthropic-claude-101.webp"],
     verify: "",
@@ -222,8 +222,8 @@ export const aiCertificates = [
     },
     date: { uz: "26 mart, 2026", en: "March 26, 2026" },
     description: {
-      uz: "BAA va O'zbekiston hukumatlarining besh million kishini AI tizimlari uchun prompt engineering bo'yicha o'qitish tashabbusi.",
-      en: "A joint UAE–Uzbekistan government initiative training five million people in prompt engineering for AI systems.",
+      uz: "BAA va O'zbekiston hukumatlarining qo'shma dasturi. Maqsad 5 million kishiga AI bilan ishlash va prompt yozishni o'rgatish.",
+      en: "A joint UAE–Uzbekistan government program that aims to teach five million people to work with AI and write prompts.",
     },
     images: ["/certificates/five-million-ai-leaders.webp"],
     verify: "",
@@ -233,8 +233,8 @@ export const aiCertificates = [
     issuer: { uz: "Najot Ta'lim o'quv markazi", en: "Najot Ta'lim training center" },
     date: { uz: "28 fevral, 2026", en: "February 28, 2026" },
     description: {
-      uz: "Kursni a'lo baholarga tamomladim. Sertifikat bilan birga markaz rahbariyatidan tashakkurnoma oldim.",
-      en: "Completed the course with excellent grades and received a letter of appreciation from the center's leadership alongside the certificate.",
+      uz: "Kursni a'lo baholar bilan tugatdim. Sertifikatdan tashqari markaz rahbariyati tashakkurnoma ham berdi.",
+      en: "Finished the course with top marks. On top of the certificate, the center's leadership gave me a letter of thanks.",
     },
     images: [
       "/certificates/najot-talim-prompt-engineering.webp",
@@ -251,17 +251,17 @@ export const experience = [
     role: { uz: "Asoschi", en: "Founder" },
     org: "AvtoAI",
     description: {
-      uz: "Haydovchilik guvohnomasi imtihoniga AI yordamida tayyorlov platformasi",
-      en: "AI-powered driver's license exam preparation platform",
+      uz: "Haydovchilik imtihoniga AI yordamida tayyorlanish platformasi",
+      en: "A platform that helps people prepare for the driver's licence exam with AI",
     },
     bullets: [
       {
-        uz: "Mahsulot g'oyasi, ishlab chiqish va rivojlantirishni boshqarish",
-        en: "Leading the product vision, development and growth",
+        uz: "Mahsulotni o'zim boshqaraman: nima qilinadi, qanday qilinadi va qachon chiqadi",
+        en: "I run the product: what gets built, how, and when it ships",
       },
       {
-        uz: "AI texnologiyalarini o'quv jarayoniga tatbiq etish",
-        en: "Applying AI technologies to the learning process",
+        uz: "AI'ni imtihonga tayyorlanish jarayonining ichiga olib kiraman",
+        en: "Bringing AI into the way people actually study for the exam",
       },
     ],
   },
@@ -271,10 +271,10 @@ export const experience = [
     org: "Najot Ta'lim o'quv markazi",
     description: { uz: "", en: "" },
     bullets: [
-      { uz: "200+ o'quvchini o'qitganman", en: "Taught 200+ students" },
+      { uz: "Hozirgacha 200 dan ortiq o'quvchiga dars berdim", en: "Taught more than 200 students so far" },
       {
-        uz: "AI vositalari bilan dasturlash bo'yicha amaliy darslar olib boraman",
-        en: "Running hands-on classes on programming with AI tools",
+        uz: "Darslarda AI vositalari bilan haqiqiy kod yozamiz",
+        en: "In class we write real code with AI tools",
       },
     ],
   },
@@ -285,8 +285,8 @@ export const experience = [
     description: { uz: "", en: "" },
     bullets: [
       {
-        uz: "Onlayn test platformasini ishlab chiqish va qo'llab-quvvatlash",
-        en: "Developing and maintaining an online testing platform",
+        uz: "Onlayn test platformasiga yangi imkoniyatlar qo'shganman va uning ishlab turishiga qaraganman",
+        en: "Added features to an online testing platform and kept it running",
       },
     ],
   },
@@ -306,7 +306,7 @@ export const t = {
       cta: "Bog'lanish",
     },
     hero: {
-      badge: "Hamkorlik va darslar uchun ochiq",
+      badge: "Yangi loyiha va darslarga tayyorman",
       intro: "Salom, men",
       ctaPrimary: "Bog'lanish",
       ctaSecondary: "CV yuklab olish",
@@ -319,20 +319,20 @@ export const t = {
     },
     skills: {
       tag: "Ko'nikmalar",
-      title: "Nimalar qila olaman",
-      sub: "Har kuni ishlatadigan asosiy ko'nikmalarim",
+      title: "Nima bilan shug'ullanaman",
+      sub: "Kundalik ishimda shulardan foydalanaman",
     },
     projects: {
       tag: "Loyihalar",
       title: "Loyihalarim",
-      sub: "Men asos solgan va ishlab chiqishda qatnashgan mahsulotlar",
+      sub: "O'zim asos solgan va jamoada qatnashgan loyihalar",
       visit: "Saytga o'tish",
       code: "Kodni ko'rish",
     },
     events: {
       tag: "Chiqishlar va tadbirlar",
       title: "Video va tadbirlar",
-      sub: "AI coding bo'yicha chiqishlarim va ishtirok etgan xalqaro tadbirlarim",
+      sub: "AI coding haqidagi chiqishlarim va qatnashgan tadbirlarim",
       watch: "YouTube'da ko'rish",
       certificate: "Sertifikat",
       openCertificate: "Sertifikatni kattalashtirish",
@@ -340,19 +340,19 @@ export const t = {
     certificates: {
       tag: "Sertifikatlar",
       title: "AI sertifikatlarim",
-      sub: "Sun'iy intellekt va prompt engineering yo'nalishida olgan sertifikatlarim",
+      sub: "AI va prompt engineering bo'yicha tugatgan kurslarim",
       verify: "Tekshirish",
       open: "Kattalashtirish",
     },
     experience: {
       tag: "Kasbiy yo'l",
       title: "Ish tajribasi",
-      sub: "Qayerda ishlaganman va nima qilganman",
+      sub: "Qayerlarda ishlaganman va u yerda nima qilganman",
     },
     contact: {
       tag: "Aloqa",
-      title: "Keling, gaplashamiz",
-      sub: "Hamkorlik, AI bo'yicha darslar yoki loyiha taklifi bo'lsa — yozing, tez orada javob beraman.",
+      title: "Biror fikringiz bormi?",
+      sub: "Dars, hamkorlik yoki loyiha bo'yicha bemalol yozing. Imkon qadar tez javob beraman.",
       form: {
         name: "Ismingiz",
         namePlaceholder: "Ali Valiyev",
@@ -374,7 +374,7 @@ export const t = {
       perks: [
         "AI bilan dasturlash bo'yicha darslar",
         "Prompt engineering bo'yicha maslahat",
-        "Startap va mahsulot bo'yicha hamkorlik",
+        "Startap yoki mahsulot ustida birga ishlash",
       ],
     },
     footer: {
@@ -396,7 +396,7 @@ export const t = {
       cta: "Let's Talk",
     },
     hero: {
-      badge: "Open to collaborations & classes",
+      badge: "Taking on new projects and classes",
       intro: "Hello, I'm",
       ctaPrimary: "Get in touch",
       ctaSecondary: "Download CV",
@@ -410,19 +410,19 @@ export const t = {
     skills: {
       tag: "Skills",
       title: "What I do",
-      sub: "The core skills I use every day",
+      sub: "The things I work with day to day",
     },
     projects: {
       tag: "Projects",
       title: "My Projects",
-      sub: "Products I founded or helped build",
+      sub: "Things I founded or helped build",
       visit: "Visit site",
       code: "View code",
     },
     events: {
       tag: "Talks & events",
       title: "Videos & Events",
-      sub: "My talks on AI coding and the international events I've taken part in",
+      sub: "My talks on AI coding and events I've attended",
       watch: "Watch on YouTube",
       certificate: "Certificate",
       openCertificate: "Open certificate",
@@ -430,19 +430,19 @@ export const t = {
     certificates: {
       tag: "Certificates",
       title: "AI Certificates",
-      sub: "Certificates I've earned in artificial intelligence and prompt engineering",
+      sub: "Courses I've completed in AI and prompt engineering",
       verify: "Verify",
       open: "View full size",
     },
     experience: {
       tag: "Career",
       title: "Work Experience",
-      sub: "Where I've worked and what I did",
+      sub: "Where I've worked and what I did there",
     },
     contact: {
       tag: "Contact",
-      title: "Let's talk",
-      sub: "Collaboration, AI classes or a project idea — write to me and I'll reply soon.",
+      title: "Got something in mind?",
+      sub: "Classes, a collaboration or a project idea: just send a message and I'll get back to you as soon as I can.",
       form: {
         name: "Your name",
         namePlaceholder: "John Doe",
@@ -464,7 +464,7 @@ export const t = {
       perks: [
         "Classes on programming with AI",
         "Prompt engineering consulting",
-        "Startup & product collaboration",
+        "Working together on a startup or product",
       ],
     },
     footer: {

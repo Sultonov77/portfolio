@@ -41,11 +41,12 @@ export default function Reveal({ children, delay = 0, className = "", as = "div"
     return () => observer.disconnect();
   }, []);
 
-  const Tag = as as React.ElementType;
+  // Typed as "div" so the JSX props check stays simple; all allowed tags take the same props here
+  const Tag = as as "div";
 
   return (
     <Tag
-      ref={ref as React.Ref<never>}
+      ref={ref as React.Ref<HTMLDivElement>}
       className={`reveal ${visible ? "is-visible" : ""} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >

@@ -3,6 +3,7 @@
 import { aiCertificates, pick, t, type Lang } from "@/lib/content";
 import { CheckIcon, ExternalIcon } from "./Icons";
 import Reveal from "./Reveal";
+import Tilt from "./Tilt";
 import Section from "./Section";
 
 export default function Certificates({ lang }: { lang: Lang }) {
@@ -15,68 +16,70 @@ export default function Certificates({ lang }: { lang: Lang }) {
           const multi = cert.images.length > 1;
           return (
             <Reveal key={cert.title} delay={idx * 80}>
-              <article className="group flex h-full flex-col overflow-hidden glass rounded-2xl border border-line transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/50">
-                {/* Preview */}
-                <div
-                  className={`grid aspect-[4/3] gap-px border-b border-line bg-line ${multi ? "grid-cols-2" : "grid-cols-1"}`}
-                >
-                  {cert.images.map((src) => (
-                    <a
-                      key={src}
-                      href={src}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      aria-label={`${cert.title} — ${c.open}`}
-                      className={`relative block overflow-hidden ${multi ? "bg-ink-3" : "bg-[#f4f3ef] p-3 sm:p-4"}`}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={src}
-                        alt={`${cert.title} — ${pick(cert.issuer, lang)}`}
-                        className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${
-                          multi ? "object-cover" : "object-contain"
-                        }`}
-                        loading="lazy"
-                      />
-                    </a>
-                  ))}
-                </div>
-
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-brand-300">
-                      {pick(cert.issuer, lang)}
-                    </span>
-                    <span className="shrink-0 text-sm text-zinc-400">{cert.date[lang]}</span>
-                  </div>
-
-                  <h3 className="mt-2 text-xl font-semibold text-white">{cert.title}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-zinc-300">{cert.description[lang]}</p>
-
-                  <div className="mt-auto flex flex-wrap gap-3 pt-6">
-                    {cert.verify && (
+              <Tilt className="h-full">
+                <article className="group flex h-full flex-col overflow-hidden glass rounded-2xl border border-line transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/50">
+                  {/* Preview */}
+                  <div
+                    className={`grid aspect-[4/3] gap-px border-b border-line bg-line ${multi ? "grid-cols-2" : "grid-cols-1"}`}
+                  >
+                    {cert.images.map((src) => (
                       <a
-                        href={cert.verify}
+                        key={src}
+                        href={src}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="inline-flex h-11 items-center gap-2 rounded-xl btn-grad px-5 text-sm font-semibold text-white transition-colors"
+                        aria-label={`${cert.title} — ${c.open}`}
+                        className={`relative block overflow-hidden ${multi ? "bg-ink-3" : "bg-[#f4f3ef] p-3 sm:p-4"}`}
                       >
-                        <CheckIcon />
-                        {c.verify}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={src}
+                          alt={`${cert.title} — ${pick(cert.issuer, lang)}`}
+                          className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${
+                            multi ? "object-cover" : "object-contain"
+                          }`}
+                          loading="lazy"
+                        />
                       </a>
-                    )}
-                    <a
-                      href={cert.images[0]}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="inline-flex h-11 items-center gap-2 rounded-xl border border-line px-5 text-sm font-semibold text-zinc-200 transition-colors hover:border-brand-500/60"
-                    >
-                      {c.open}
-                      <ExternalIcon />
-                    </a>
+                    ))}
                   </div>
-                </div>
-              </article>
+
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-brand-300">
+                        {pick(cert.issuer, lang)}
+                      </span>
+                      <span className="shrink-0 text-sm text-zinc-400">{cert.date[lang]}</span>
+                    </div>
+
+                    <h3 className="mt-2 text-xl font-semibold text-white">{cert.title}</h3>
+                    <p className="mt-2 text-base leading-relaxed text-zinc-300">{cert.description[lang]}</p>
+
+                    <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                      {cert.verify && (
+                        <a
+                          href={cert.verify}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="inline-flex h-11 items-center gap-2 rounded-xl btn-grad px-5 text-sm font-semibold text-white transition-colors"
+                        >
+                          <CheckIcon />
+                          {c.verify}
+                        </a>
+                      )}
+                      <a
+                        href={cert.images[0]}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="inline-flex h-11 items-center gap-2 rounded-xl border border-line px-5 text-sm font-semibold text-zinc-200 transition-colors hover:border-brand-500/60"
+                      >
+                        {c.open}
+                        <ExternalIcon />
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </Tilt>
             </Reveal>
           );
         })}

@@ -2,7 +2,9 @@
 
 import { profile, heroStats, t, type Lang } from "@/lib/content";
 import { ArrowIcon, DownloadIcon, MapPinIcon, socialIcons } from "./Icons";
+import Hero3D from "./Hero3D";
 import Reveal from "./Reveal";
+import Tilt from "./Tilt";
 
 export default function Hero({ lang }: { lang: Lang }) {
   const c = t[lang].hero;
@@ -10,11 +12,12 @@ export default function Hero({ lang }: { lang: Lang }) {
   return (
     <section id="top" className="relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-24 sm:pt-36 lg:pt-40">
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[min(900px,100vw)] -translate-x-1/2 rounded-full bg-gradient-to-r from-brand-600/20 via-pink/10 to-amber/10 blur-[120px]" />
+      <Hero3D />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         {/* Photo — first on mobile, right on desktop */}
         <Reveal className="order-first mx-auto w-full max-w-[250px] sm:max-w-[320px] lg:order-last lg:max-w-[400px]">
-          <div className="relative">
+          <Tilt max={10} className="relative">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-500/50 via-pink/25 to-amber/10 blur-2xl" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-line bg-ink-3">
               {profile.photo ? (
@@ -45,7 +48,7 @@ export default function Hero({ lang }: { lang: Lang }) {
                 <span className="block text-xs text-zinc-400">{profile.website}</span>
               </span>
             </a>
-          </div>
+          </Tilt>
         </Reveal>
 
         {/* Text */}

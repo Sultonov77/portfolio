@@ -12,16 +12,16 @@ export const profile = {
   surname: "Sultonov",
   fullName: "Samandar Sultonov",
   role: {
-    uz: "AI ustozi va AvtoAI asoschisi",
-    en: "AI mentor and founder of AvtoAI",
+    uz: "AI ustozi · AI bilan avtomatlashtirish",
+    en: "AI mentor · AI automation",
   },
   headline: {
-    uz: "3 yildan beri dasturlash bilan shug'ullanaman, oxirgi 2 yilda asosan AI bilan ishlayapman. Najot Ta'limda AI coding'dan dars beraman va AvtoAI'ni quryapman.",
-    en: "I've been writing code for 3 years, and for the last 2 I've mostly worked with AI. I teach AI coding at Najot Ta'lim and I'm building AvtoAI.",
+    uz: "AI'ni noldan to'liq o'rgataman va takroriy ishlarni AI bilan avtomatlashtiraman. Najot Ta'limda AI'dan dars beraman va AvtoAI asoschisiman.",
+    en: "I teach AI from the ground up and automate repetitive work with it. I teach AI at Najot Ta'lim and I'm the founder of AvtoAI.",
   },
   sub: {
-    uz: "Hozirgacha 200 dan ortiq o'quvchiga AI bilan dasturlash va prompt yozishni o'rgatganman. 5 dan ortiq loyiha qilganman, ulardan biri haydovchilik imtihoniga tayyorlov platformasi AvtoAI. Yangi AI vositasi chiqsa, odatda birinchilardan bo'lib sinab ko'raman.",
-    en: "So far I've taught more than 200 students how to code with AI and write good prompts. I've built 5+ projects, one of them AvtoAI, a platform for driver's licence exam prep. When a new AI tool comes out, I'm usually among the first to try it.",
+    uz: "2 yildan beri asosan AI bilan ishlayman, dasturlash tajribam esa 3 yil. Hozirgacha 200 dan ortiq o'quvchiga AI vositalaridan foydalanish va prompt yozishni o'rgatganman. Darslarimda AI asoslaridan boshlab, kundalik ishni AI bilan avtomatlashtirishgacha bo'lgan yo'lni birga o'tamiz. 5 dan ortiq loyiha qilganman, ulardan biri haydovchilik imtihoniga tayyorlov platformasi AvtoAI.",
+    en: "For the last 2 years I've worked mostly with AI, on top of 3 years of programming. So far I've taught more than 200 students how to use AI tools and write good prompts. In my classes we go all the way from AI basics to automating everyday work with it. I've built 5+ projects, one of them AvtoAI, a platform for driver's licence exam prep.",
   },
   email: "samtall758@gmail.com",
   phone: "+998 94 522 50 70",
@@ -43,17 +43,17 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: "3+", label: { uz: "Yil dasturlash", en: "Years coding" } },
-  { value: "2+", label: { uz: "Yil AI", en: "Years in AI" } },
   { value: "200+", label: { uz: "O'quvchi", en: "Students" } },
+  { value: "2+", label: { uz: "Yil AI", en: "Years in AI" } },
   { value: "5+", label: { uz: "Loyiha", en: "Projects" } },
+  { value: "3+", label: { uz: "Yil dasturlash", en: "Years coding" } },
 ];
 
 export const about = {
   tag: { uz: "Men haqimda", en: "About me" },
   title: {
-    uz: "AI bilan dasturlayman va buni boshqalarga ham o'rgataman",
-    en: "I code with AI and teach others to do the same",
+    uz: "AI'ni o'rgataman va u bilan ishlarni avtomatlashtiraman",
+    en: "I teach AI and use it to automate work",
   },
   bio: {
     uz: profile.sub.uz,
@@ -83,12 +83,20 @@ export const about = {
 
 export const skillsList: { name: L; desc: L; icon: string }[] = [
   {
-    name: { uz: "AI coding", en: "AI coding" },
+    name: { uz: "AI'ni o'qitish", en: "Teaching AI" },
     desc: {
-      uz: "AI bilan birga dasturlayman: ish tezroq bitadi, sifatini esa o'zim nazorat qilaman",
-      en: "I write code together with AI: it gets done faster, and I stay in charge of the quality",
+      uz: "AI'ni noldan to'liq o'rgataman: asoslardan tortib real ishda ishlatishgacha. Hozirgacha 200 dan ortiq o'quvchi",
+      en: "I teach AI from scratch, from the basics all the way to using it in real work. 200+ students so far",
     },
-    icon: "sparkles",
+    icon: "graduation",
+  },
+  {
+    name: { uz: "AI bilan avtomatlashtirish", en: "AI automation" },
+    desc: {
+      uz: "Takroriy ishlarni AI agentlar va botlarga topshiraman, vaqt esa muhim ishlarga qoladi",
+      en: "I hand repetitive work over to AI agents and bots, so your time goes to the work that matters",
+    },
+    icon: "automation",
   },
   {
     name: { uz: "Prompt engineering", en: "Prompt engineering" },
@@ -99,28 +107,12 @@ export const skillsList: { name: L; desc: L; icon: string }[] = [
     icon: "prompt",
   },
   {
-    name: { uz: "Dasturlash", en: "Programming" },
+    name: { uz: "AI vositalari", en: "AI tools" },
     desc: {
-      uz: "Veb-sayt va platformalar yarataman, keyin ularning ishlab turishiga qarayman",
-      en: "I build websites and platforms, then keep them running",
+      uz: "Claude kabi AI assistentlardan kundalik ishda to'liq foydalanishni ko'rsataman",
+      en: "Showing how to get the most out of AI assistants like Claude in everyday work",
     },
-    icon: "code",
-  },
-  {
-    name: { uz: "AI orqali avtomatlashtirish", en: "AI automation" },
-    desc: {
-      uz: "Bir xil ishni qayta-qayta qilmaslik uchun bot va AI agentlar yasayman",
-      en: "Bots and AI agents that take repetitive work off your plate",
-    },
-    icon: "automation",
-  },
-  {
-    name: { uz: "O'qitish va mentorlik", en: "Teaching & mentoring" },
-    desc: {
-      uz: "Hozirgacha 200 dan ortiq o'quvchi bilan amaliy dars o'tganman",
-      en: "Practical classes with 200+ students so far",
-    },
-    icon: "graduation",
+    icon: "sparkles",
   },
   {
     name: { uz: "Startap boshqaruvi", en: "Startup management" },
@@ -129,6 +121,14 @@ export const skillsList: { name: L; desc: L; icon: string }[] = [
       en: "Took AvtoAI from an idea to a live product",
     },
     icon: "rocket",
+  },
+  {
+    name: { uz: "Dasturlash", en: "Programming" },
+    desc: {
+      uz: "Kerak bo'lganda sayt va platformalarni AI yordamida o'zim yarataman",
+      en: "When a project needs it, I build the website or platform myself with AI",
+    },
+    icon: "code",
   },
 ];
 
@@ -272,8 +272,8 @@ export const experience = [
     bullets: [
       { uz: "Hozirgacha 200 dan ortiq o'quvchiga dars berdim", en: "Taught more than 200 students so far" },
       {
-        uz: "Darslarda AI vositalari bilan haqiqiy loyihalarni dasturlaymiz",
-        en: "In class we write real code with AI tools",
+        uz: "Darslarda AI vositalari bilan haqiqiy vazifalarni bajaramiz",
+        en: "In class we tackle real tasks with AI tools",
       },
     ],
   },
@@ -351,7 +351,7 @@ export const t = {
     contact: {
       tag: "Aloqa",
       title: "Biror fikringiz bormi?",
-      sub: "Dars, hamkorlik yoki loyiha bo'yicha bemalol yozing. Imkon qadar tez javob beraman.",
+      sub: "AI darslari, avtomatlashtirish yoki hamkorlik bo'yicha bemalol yozing. Imkon qadar tez javob beraman.",
       form: {
         name: "Ismingiz",
         namePlaceholder: "Ali Valiyev",
@@ -359,7 +359,8 @@ export const t = {
         topic: "Mavzu",
         topicPlaceholder: "Mavzuni tanlang",
         topics: [
-          "AI coding / prompt engineering darslari",
+          "AI darslari",
+          "AI bilan avtomatlashtirish",
           "Mentorlik",
           "Loyiha / hamkorlik",
           "AvtoAI haqida",
@@ -371,7 +372,8 @@ export const t = {
         note: "Tugma email ilovangizni tayyor xabar bilan ochadi.",
       },
       perks: [
-        "AI bilan dasturlash bo'yicha darslar",
+        "AI'ni noldan o'rganish bo'yicha darslar",
+        "Ishlaringizni AI bilan avtomatlashtirish",
         "Prompt engineering bo'yicha maslahat",
         "Startap yoki mahsulot ustida birga ishlash",
       ],
@@ -441,7 +443,7 @@ export const t = {
     contact: {
       tag: "Contact",
       title: "Got something in mind?",
-      sub: "Classes, a collaboration or a project idea: just send a message and I'll get back to you as soon as I can.",
+      sub: "AI classes, automation or a collaboration: just send a message and I'll get back to you as soon as I can.",
       form: {
         name: "Your name",
         namePlaceholder: "John Doe",
@@ -449,7 +451,8 @@ export const t = {
         topic: "Topic",
         topicPlaceholder: "Choose a topic",
         topics: [
-          "AI coding / prompt engineering classes",
+          "AI classes",
+          "AI automation",
           "Mentoring",
           "Project / collaboration",
           "About AvtoAI",
@@ -461,7 +464,8 @@ export const t = {
         note: "The button opens your email app with the message ready.",
       },
       perks: [
-        "Classes on programming with AI",
+        "Classes on learning AI from scratch",
+        "Automating your work with AI",
         "Prompt engineering consulting",
         "Working together on a startup or product",
       ],

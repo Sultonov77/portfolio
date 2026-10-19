@@ -12,12 +12,12 @@ const bricolage = Bricolage_Grotesque({
 });
 
 const description =
-  "Samandar Sultonov — AI ustozi va AvtoAI asoschisi. AI yordamida dasturlash va prompt engineering bo'yicha 200+ o'quvchiga dars bergan.";
+  "Samandar Sultonov — AI ustozi va AvtoAI asoschisi. AI'ni noldan o'rgatadi va ishlarni AI bilan avtomatlashtiradi. 200+ o'quvchiga dars bergan.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sultonovsamandar.vercel.app"),
   title: {
-    default: `${profile.fullName} — AI Mentor & Startup Founder`,
+    default: `${profile.fullName} — AI Mentor & Automation`,
     template: `%s — ${profile.fullName}`,
   },
   description,
@@ -28,7 +28,8 @@ export const metadata: Metadata = {
     "AI ustozi",
     "AI Mentor",
     "Prompt Engineering",
-    "AI Coding",
+    "AI Automation",
+    "AI avtomatlashtirish",
     "AvtoAI",
     "Najot Ta'lim",
     "Uzbekistan",
@@ -38,14 +39,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "uz_UZ",
-    title: `${profile.fullName} — AI Mentor & Startup Founder`,
+    title: `${profile.fullName} — AI Mentor & Automation`,
     description,
     siteName: profile.fullName,
     images: [{ url: profile.photo, width: 1023, height: 1537, alt: profile.fullName }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.fullName} — AI Mentor & Startup Founder`,
+    title: `${profile.fullName} — AI Mentor & Automation`,
     description,
   },
   robots: { index: true, follow: true },

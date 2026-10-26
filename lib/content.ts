@@ -23,22 +23,16 @@ export const profile = {
     uz: "2 yildan beri asosan AI bilan ishlayman, dasturlash tajribam esa 3 yil. Hozirgacha 200 dan ortiq o'quvchiga AI vositalaridan foydalanish va prompt yozishni o'rgatganman. Darslarimda AI asoslaridan boshlab, kundalik ishni AI bilan avtomatlashtirishgacha bo'lgan yo'lni birga o'tamiz. 5 dan ortiq loyiha qilganman, ulardan biri haydovchilik imtihoniga tayyorlov platformasi AvtoAI.",
     en: "For the last 2 years I've worked mostly with AI, on top of 3 years of programming. So far I've taught more than 200 students how to use AI tools and write good prompts. In my classes we go all the way from AI basics to automating everyday work with it. I've built 5+ projects, one of them AvtoAI, a platform for driver's licence exam prep.",
   },
-  email: "samtall758@gmail.com",
-  phone: "+998 94 522 50 70",
-  phoneRaw: "+998945225070",
   website: "avtoai.uz",
   location: { uz: "Toshkent, O'zbekiston", en: "Tashkent, Uzbekistan" },
   photo: "/photo.webp",
   // TODO: tayyor CV faylini public/resume.pdf ga qo'ysangiz, "CV yuklab olish" tugmasi paydo bo'ladi.
   resumeUrl: "",
   telegram: { handle: "@sultonov28", href: "https://t.me/sultonov28" },
-  github: { handle: "Sultonov77", href: "https://github.com/Sultonov77" },
   socials: [
-    { label: "GitHub", href: "https://github.com/Sultonov77", icon: "github" },
-    { label: "Telegram", href: "https://t.me/sultonov28", icon: "telegram" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/samandar-sultonov-a81324416/", icon: "linkedin" },
-    { label: "Instagram", href: "https://www.instagram.com/sultonov.ai/", icon: "instagram" },
-    { label: "Email", href: "mailto:samtall758@gmail.com", icon: "mail" },
+    { label: "Telegram", handle: "@sultonov28", href: "https://t.me/sultonov28", icon: "telegram" },
+    { label: "LinkedIn", handle: "Samandar Sultonov", href: "https://www.linkedin.com/in/samandar-sultonov-a81324416/", icon: "linkedin" },
+    { label: "Instagram", handle: "@sultonov.ai", href: "https://www.instagram.com/sultonov.ai/", icon: "instagram" },
   ].filter((s) => s.href),
 };
 
@@ -145,20 +139,6 @@ export const projects = [
       en: "A platform for getting ready for the driver's licence exam. You learn the traffic rules with help from AI and practise on real exam-style questions.",
     },
     site: "https://avtoai.uz",
-    repo: "",
-  },
-  {
-    name: "testbor.uz",
-    logo: "/logos/testbor.webp",
-    subtitle: { uz: "Dasturchi", en: "Developer" },
-    year: "",
-    tags: ["Web", "EdTech"],
-    description: {
-      uz: "Onlayn test platformasi. Jamoada dasturchi bo'lib ishlaganman: yangi imkoniyatlar qo'shganman va saytning ishlab turishiga qaraganman.",
-      en: "An online testing platform. I worked on it as a developer, adding features and keeping the site running.",
-    },
-    site: "https://testbor.uz",
-    repo: "",
   },
 ];
 
@@ -277,18 +257,6 @@ export const experience = [
       },
     ],
   },
-  {
-    period: { uz: "Oldingi ish", en: "Previous" },
-    role: { uz: "Dasturchi", en: "Developer" },
-    org: "testbor.uz",
-    description: { uz: "", en: "" },
-    bullets: [
-      {
-        uz: "Onlayn test platformasiga yangi imkoniyatlar qo'shganman va uning ishlab turishiga qaraganman",
-        en: "Added features to an online testing platform and kept it running",
-      },
-    ],
-  },
 ];
 
 export const t = {
@@ -324,9 +292,8 @@ export const t = {
     projects: {
       tag: "Loyihalar",
       title: "Loyihalarim",
-      sub: "O'zim asos solgan va jamoada qatnashgan loyihalar",
+      sub: "O'zim asos solgan va rivojlantirayotgan loyihalar",
       visit: "Saytga o'tish",
-      code: "Kodni ko'rish",
     },
     events: {
       tag: "Chiqishlar va tadbirlar",
@@ -371,7 +338,7 @@ export const t = {
         send: "Xabar yuborish",
         sending: "Yuborilmoqda...",
         sent: "Xabaringiz yetib keldi. Tez orada javob beraman!",
-        error: "Xabar yuborilmadi. Iltimos, Telegram yoki email orqali yozing.",
+        error: "Xabar yuborilmadi. Iltimos, Telegram orqali yozing.",
         note: "Xabaringiz to'g'ridan-to'g'ri menga Telegram orqali keladi.",
       },
       perks: [
@@ -419,9 +386,8 @@ export const t = {
     projects: {
       tag: "Projects",
       title: "My Projects",
-      sub: "Things I founded or helped build",
+      sub: "Things I founded and keep building",
       visit: "Visit site",
-      code: "View code",
     },
     events: {
       tag: "Talks & events",
@@ -466,7 +432,7 @@ export const t = {
         send: "Send message",
         sending: "Sending...",
         sent: "Got your message. I'll get back to you soon!",
-        error: "Couldn't send your message. Please reach me on Telegram or by email.",
+        error: "Couldn't send your message. Please reach me on Telegram.",
         note: "Your message comes straight to me on Telegram.",
       },
       perks: [

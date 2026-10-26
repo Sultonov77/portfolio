@@ -23,7 +23,7 @@ Boshqa hech qaysi faylga tegish shart emas. U yerda:
 
 | Bo'lim | Nima uchun |
 | --- | --- |
-| `profile` | Ism, email, joylashuv, ijtimoiy tarmoq havolalari |
+| `profile` | Ism, joylashuv, ijtimoiy tarmoq havolalari |
 | `t` | Sayt interfeysi matnlari (uz / en) |
 | `skillGroups` | Ko'nikmalar bo'limi |
 | `projects` | Loyihalar ro'yxati |

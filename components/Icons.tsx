@@ -22,14 +22,6 @@ function Stroke({ className, children, width = 1.8 }: IconProps & { children: Re
 }
 
 /* Brand icons */
-export function GithubIcon({ className = base }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.79-4.57 5.04.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
-    </svg>
-  );
-}
-
 export function TelegramIcon({ className = base }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -57,23 +49,6 @@ export function InstagramIcon({ className = base }: IconProps) {
 }
 
 /* UI icons */
-export function MailIcon({ className = base }: IconProps) {
-  return (
-    <Stroke className={className}>
-      <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
-      <path d="m3 7 8.4 5.6a1.5 1.5 0 0 0 1.7 0L21.5 7" />
-    </Stroke>
-  );
-}
-
-export function PhoneIcon({ className = base }: IconProps) {
-  return (
-    <Stroke className={className}>
-      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
-    </Stroke>
-  );
-}
-
 export function MapPinIcon({ className = base }: IconProps) {
   return (
     <Stroke className={className}>
@@ -119,15 +94,6 @@ export function DownloadIcon({ className = "h-4 w-4" }: IconProps) {
   return (
     <Stroke className={className} width={2}>
       <path d="M12 3v12M7 10l5 5 5-5M4 21h16" />
-    </Stroke>
-  );
-}
-
-export function CopyIcon({ className = "h-4 w-4" }: IconProps) {
-  return (
-    <Stroke className={className} width={2}>
-      <rect x="9" y="9" width="11" height="11" rx="2" />
-      <path d="M5 15V6a1 1 0 0 1 1-1h9" />
     </Stroke>
   );
 }
@@ -220,9 +186,7 @@ export const skillIcons: Record<string, (p: IconProps) => React.JSX.Element> = {
 };
 
 export const socialIcons: Record<string, (p: IconProps) => React.JSX.Element> = {
-  github: GithubIcon,
   telegram: TelegramIcon,
   linkedin: LinkedinIcon,
   instagram: InstagramIcon,
-  mail: MailIcon,
 };

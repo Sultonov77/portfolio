@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { profile, t, type Lang } from "@/lib/content";
-import { ArrowIcon, CheckIcon, CopyIcon, GithubIcon, MailIcon, PhoneIcon, TelegramIcon } from "./Icons";
+import { ArrowIcon, CheckIcon, ExternalIcon, socialIcons } from "./Icons";
 import Reveal from "./Reveal";
 import Section from "./Section";
 
@@ -11,19 +11,8 @@ const inputClass =
 
 export default function Contact({ lang }: { lang: Lang }) {
   const c = t[lang].contact;
-  const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", topic: "", message: "", website: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  async function copyEmail() {
-    try {
-      await navigator.clipboard.writeText(profile.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
-    }
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,67 +31,30 @@ export default function Contact({ lang }: { lang: Lang }) {
     }
   };
 
-  const channels = [
-    {
-      label: "Email",
-      value: profile.email,
-      href: `mailto:${profile.email}`,
-      Icon: MailIcon,
-    },
-    {
-      label: lang === "uz" ? "Telefon" : "Phone",
-      value: profile.phone,
-      href: `tel:${profile.phoneRaw}`,
-      Icon: PhoneIcon,
-    },
-    {
-      label: "Telegram",
-      value: profile.telegram.handle,
-      href: profile.telegram.href,
-      Icon: TelegramIcon,
-    },
-    {
-      label: "GitHub",
-      value: profile.github.handle,
-      href: profile.github.href,
-      Icon: GithubIcon,
-    },
-  ];
+  const channels = profile.socials.map((social) => ({ ...social, Icon: socialIcons[social.icon] }));
 
   return (
     <Section id="contact" tag={c.tag} title={c.title} sub={c.sub}>
       <div className="grid gap-6 lg:grid-cols-5 lg:gap-8">
         {/* Direct channels */}
         <div className="space-y-3 lg:col-span-2">
-          {channels.map(({ label, value, href, Icon }, i) => (
+          {channels.map(({ label, handle, href, Icon }, i) => (
             <Reveal key={label} delay={i * 60}>
-              <div className="flex items-center gap-3 glass rounded-2xl border border-line p-4 transition-colors hover:border-brand-500/50">
-                <a
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel="noreferrer noopener"
-                  className="flex min-w-0 flex-1 items-center gap-4"
-                >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-sm text-zinc-400">{label}</span>
-                    <span className="block truncate text-base font-semibold text-white">{value}</span>
-                  </span>
-                </a>
-                {label === "Email" && (
-                  <button
-                    type="button"
-                    onClick={copyEmail}
-                    aria-label={lang === "uz" ? "Emailni nusxalash" : "Copy email"}
-                    title={lang === "uz" ? "Nusxalash" : "Copy"}
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-line text-zinc-400 transition-colors hover:border-brand-500 hover:text-brand-400 cursor-pointer"
-                  >
-                    {copied ? <CheckIcon className="h-4 w-4 text-brand-400" /> : <CopyIcon />}
-                  </button>
-                )}
-              </div>
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="group flex items-center gap-4 glass rounded-2xl border border-line p-4 transition-all hover:-translate-y-0.5 hover:border-brand-500/50"
+              >
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 transition-colors group-hover:bg-brand-500/20">
+                  {Icon && <Icon className="h-5 w-5" />}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm text-zinc-400">{label}</span>
+                  <span className="block truncate text-base font-semibold text-white">{handle}</span>
+                </span>
+                <ExternalIcon className="h-4 w-4 shrink-0 text-zinc-500 transition-colors group-hover:text-brand-400" />
+              </a>
             </Reveal>
           ))}
 

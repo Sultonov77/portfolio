@@ -43,13 +43,18 @@ export async function POST(request: Request) {
   }
 
   const name = field(body, "name");
-  const phone = field(body, "phone");
+  const rawPhone = field(body, "phone");
   const topic = field(body, "topic");
   const message = field(body, "message");
-  const digits = phone.replace(/\D/g, "");
-  if (!name || !message || !/^[+0-9 ()-]+$/.test(phone) || digits.length < 7 || digits.length > 15) {
+  // Only the digits matter: autofill often adds non-breaking spaces, dots or direction marks
+  const digits = rawPhone.replace(/\D/g, "");
+  if (!name || !message) {
     return Response.json({ ok: false, error: "invalid" }, { status: 400 });
   }
+  if (digits.length < 7 || digits.length > 15) {
+    return Response.json({ ok: false, error: "invalid_phone" }, { status: 400 });
+  }
+  const phone = (rawPhone.trimStart().startsWith("+") ? "+" : "") + digits;
 
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   if (tooMany(ip)) {

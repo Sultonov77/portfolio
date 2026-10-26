@@ -13,6 +13,7 @@ export default function Contact({ lang }: { lang: Lang }) {
   const c = t[lang].contact;
   const [formData, setFormData] = useState({ name: "", phone: "", topic: "", message: "", website: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorText, setErrorText] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,10 +24,22 @@ export default function Contact({ lang }: { lang: Lang }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      if (!res.ok) throw new Error(String(res.status));
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorText(
+          data.error === "invalid_phone"
+            ? c.form.errorPhone
+            : res.status === 429
+              ? c.form.errorRateLimit
+              : c.form.error,
+        );
+        setStatus("error");
+        return;
+      }
       setStatus("sent");
       setFormData({ name: "", phone: "", topic: "", message: "", website: "" });
     } catch {
+      setErrorText(c.form.error);
       setStatus("error");
     }
   };
@@ -156,7 +169,7 @@ export default function Contact({ lang }: { lang: Lang }) {
                 status === "sent" ? "text-mint" : status === "error" ? "text-amber" : "text-zinc-500"
               }`}
             >
-              {status === "sent" ? c.form.sent : status === "error" ? c.form.error : c.form.note}
+              {status === "sent" ? c.form.sent : status === "error" ? errorText : c.form.note}
             </p>
           </form>
         </Reveal>

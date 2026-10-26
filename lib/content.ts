@@ -339,6 +339,8 @@ export const t = {
         sending: "Yuborilmoqda...",
         sent: "Xabaringiz yetib keldi. Tez orada javob beraman!",
         error: "Xabar yuborilmadi. Iltimos, Telegram orqali yozing.",
+        errorPhone: "Telefon raqamni tekshiring, masalan: +998 90 123 45 67",
+        errorRateLimit: "Juda ko'p urinish bo'ldi. Bir necha daqiqadan keyin qayta yuboring.",
         note: "Xabaringiz to'g'ridan-to'g'ri menga Telegram orqali keladi.",
       },
       perks: [
@@ -433,6 +435,8 @@ export const t = {
         sending: "Sending...",
         sent: "Got your message. I'll get back to you soon!",
         error: "Couldn't send your message. Please reach me on Telegram.",
+        errorPhone: "Please check the phone number, e.g. +998 90 123 45 67",
+        errorRateLimit: "Too many attempts. Please try again in a few minutes.",
         note: "Your message comes straight to me on Telegram.",
       },
       perks: [

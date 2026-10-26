@@ -28,9 +28,9 @@ export const profile = {
   photo: "/photo.webp",
   // TODO: tayyor CV faylini public/resume.pdf ga qo'ysangiz, "CV yuklab olish" tugmasi paydo bo'ladi.
   resumeUrl: "",
-  telegram: { handle: "@sultonov28", href: "https://t.me/sultonov28" },
   socials: [
-    { label: "Telegram", handle: "@sultonov28", href: "https://t.me/sultonov28", icon: "telegram" },
+    { label: "Telegram", handle: "@sultonov_ai", href: "https://t.me/sultonov_ai", icon: "telegram" },
+    { label: "YouTube", handle: "@sultonov_ai", href: "https://www.youtube.com/@sultonov_ai", icon: "youtube" },
     { label: "LinkedIn", handle: "Samandar Sultonov", href: "https://www.linkedin.com/in/samandar-sultonov-a81324416/", icon: "linkedin" },
     { label: "Instagram", handle: "@sultonov.ai", href: "https://www.instagram.com/sultonov.ai/", icon: "instagram" },
   ].filter((s) => s.href),
